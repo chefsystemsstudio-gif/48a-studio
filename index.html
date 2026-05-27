@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>48A · Private Service. Properly Documented.</title>
+<meta name="description" content="Field manuals, operational tools and career intelligence for the private service professional.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════
+   TOKENS
+═══════════════════════════════ */
+:root{
+  --parchment:#efe7dc;
+  --parchment-deep:#e8dfd3;
+  --parchment-mid:#e0d7ca;
+  --dark:#2b241f;
+  --dark-mid:#3d332c;
+  --text:#1c1b1a;
+  --muted:#8a8070;
+  --brass:#c9a84c;
+  --brass-dim:#a8883c;
+  --sage:#6a7462;
+  --rust:#b8896c;
+  --border:rgba(28,27,26,.09);
+  --border-light:rgba(28,27,26,.05);
+}
+
+/* ═══════════════════════════════
+   RESET & BASE
+═══════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--parchment);
+  color:var(--text);
+  font-family:'DM Mono',monospace;
+  font-size:13px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+
+/* ═══════════════════════════════
+   TYPOGRAPHY HELPERS
+═══════════════════════════════ */
+.serif{font-family:'Cormorant Garamond',serif}
+.display{font-family:'Playfair Display',serif}
+.mono{font-family:'DM Mono',monospace}
+.eyebrow{
+  font-size:8px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--sage);display:block;margin-bottom:12px;
+}
+.rule{width:32px;height:1px;background:var(--brass);display:block;margin-bottom:24px}
+
+/* ═══════════════════════════════
+   LAYOUT
+═══════════════════════════════ */
+.container{max-width:1160px;margin:0 auto;padding:0 48px}
+@media(max-width:768px){.container{padding:0 24px}}
+
+/* ═══════════════════════════════
+   NAVIGATION
+═══════════════════════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(239,231,220,.96);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 48px;
+  display:flex;justify-content:space-between;align-items:center;
+  height:60px;
+  transition:box-shadow .3s;
+}
+.nav.scrolled{box-shadow:0 1px 24px rgba(28,27,26,.08)}
+.nav-mark{display:flex;align-items:baseline;gap:0;cursor:pointer}
+.nav-num{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:900;
+  color:var(--dark);letter-spacing:-.02em;line-height:1;
+}
+.nav-A{
+  font-family:'Playfair Display',serif;
+  font-size:14px;font-weight:700;
+  color:var(--brass);margin-left:1px;padding-bottom:1px;
+}
+.nav-tabs{display:flex;gap:0;height:60px}
+.nav-tab{
+  height:100%;
+  display:flex;align-items:center;
+  padding:0 20px;
+  font-size:8px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(28,27,26,.4);
+  cursor:pointer;
+  border-bottom:2px solid transparent;
+  transition:all .2s;
+  position:relative;
+}
+.nav-tab:hover{color:var(--dark)}
+.nav-tab.active{color:var(--dark);border-bottom-color:var(--brass)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-join{
+  font-size:8px;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--dark);color:var(--parchment);
+  padding:9px 18px;
+  transition:background .2s;
+}
+.nav-join:hover{background:var(--dark-mid)}
+.nav-mobile-toggle{display:none;flex-direction:column;gap:5px;padding:4px}
+.nav-mobile-toggle span{width:22px;height:1.5px;background:var(--dark);display:block;transition:all .3s}
+
+/* ═══════════════════════════════
+   PAGES
+═══════════════════════════════ */
+.page{display:none}
+.page.active{display:block}
+
+/* ═══════════════════════════════
+   PAGE: SERIES 01
+═══════════════════════════════ */
+
+/* Hero */
+.hero{
+  padding:120px 0 80px;
+  border-bottom:1px solid var(--border);
+}
+.hero-inner{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:80px;
+  align-items:center;
+}
+.hero-left{}
+.hero-kicker{
+  font-size:8px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:28px;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-kicker::before{content:'';width:24px;height:1px;background:var(--sage);opacity:.6}
+.hero-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,6vw,76px);
+  font-weight:300;font-style:italic;
+  color:var(--dark);line-height:1.05;
+  margin-bottom:24px;
+}
+.hero-sub{
+  font-size:11px;letter-spacing:.1em;
+  color:var(--muted);
+  max-width:420px;line-height:1.9;
+  margin-bottom:40px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--dark);color:var(--parchment);
+  font-size:8px;letter-spacing:.2em;text-transform:uppercase;
+  padding:13px 24px;
+  transition:all .2s;
+}
+.btn-primary:hover{background:var(--dark-mid)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--border);
+  color:var(--muted);
+  font-size:8px;letter-spacing:.2em;text-transform:uppercase;
+  padding:13px 24px;
+  transition:all .2s;
+}
+.btn-secondary:hover{border-color:var(--dark);color:var(--dark)}
+
+/* Hero image */
+.hero-image{
+  height:480px;
+  background:var(--parchment-deep);
+  position:relative;
+  overflow:hidden;
+}
+.hero-image-inner{
+  position:absolute;inset:0;
+  background:linear-gradient(145deg,#d8c9b0 0%,#c8b898 30%,#b8a880 60%,#d0c0a0 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:32px;
+}
+.hero-image-tag{
+  font-size:7px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(28,27,26,.35);
+}
+
+/* Hero stats */
+.hero-stats{
+  display:flex;gap:0;
+  margin-top:40px;
+  border-top:1px solid var(--border);
+  padding-top:32px;
+}
+.hero-stat{
+  flex:1;
+  padding-right:24px;
+  border-right:1px solid var(--border);
+  margin-right:24px;
+}
+.hero-stat:last-child{border-right:none;margin-right:0}
+.hero-stat-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:40px;font-weight:300;
+  color:var(--brass);line-height:1;display:block;
+}
+.hero-stat-l{
+  font-size:8px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--muted);display:block;margin-top:4px;
+}
+
+/* Series strip */
+.series-strip{
+  background:var(--dark);
+  padding:0;
+  overflow:hidden;
+}
+.series-strip-inner{
+  display:flex;align-items:center;
+}
+.series-strip-label{
+  font-size:8px;letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(201,168,76,.6);white-space:nowrap;
+  padding:14px 32px;
+  border-right:1px solid rgba(255,255,255,.06);
+  flex-shrink:0;
+}
+.series-items{display:flex;flex:1;overflow-x:auto}
+.series-items::-webkit-scrollbar{display:none}
+.series-item{
+  font-size:8px;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(239,231,220,.2);
+  padding:14px 28px;
+  border-right:1px solid rgba(255,255,255,.04);
+  white-space:nowrap;
+  flex-shrink:0;
+  transition:color .2s;
+  cursor:default;
+}
+.series-item.live{
+  color:rgba(201,168,76,.75);
+  cursor:pointer;
+}
+.series-item.live:hover{color:var(--brass)}
+.series-item:last-child{border-right:none}
+.series-live-dot{
+  display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:var(--brass);margin-left:6px;
+  animation:pulse 2.5s infinite;
+  vertical-align:middle;margin-bottom:1px;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Manuals section */
+.manuals-section{
+  padding:88px 0;
+  border-bottom:1px solid var(--border);
+}
+.section-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:52px;
+}
+.section-title-block{}
+.section-view-all{
+  font-size:8px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);
+  display:flex;align-items:center;gap:6px;
+  transition:color .2s;
+  cursor:pointer;
+}
+.section-view-all:hover{color:var(--dark)}
+
+.manuals-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.manual-card{
+  background:var(--parchment-deep);
+  padding:44px;
+  border-bottom:2px solid var(--brass);
+  transition:transform .2s,box-shadow .2s;
+  position:relative;
+}
+.manual-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 40px rgba(28,27,26,.1);
+}
+.manual-id{
+  font-size:7px;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.manual-id::after{content:'';flex:1;height:1px;background:var(--border);max-width:80px}
+.manual-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-style:italic;font-weight:300;
+  color:var(--dark);margin-bottom:8px;line-height:1.2;
+}
+.manual-sub{
+  font-size:8px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:20px;
+}
+.manual-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;color:var(--muted);
+  line-height:1.85;margin-bottom:28px;
+}
+
+/* Chapter list */
+.chapter-list{
+  margin-bottom:32px;
+  border-top:1px solid var(--border);
+}
+.chapter-item{
+  display:flex;align-items:baseline;gap:14px;
+  padding:10px 0;
+  border-bottom:1px solid var(--border-light);
+}
+.chapter-num{
+  font-size:8px;letter-spacing:.1em;
+  color:rgba(201,168,76,.5);flex-shrink:0;width:20px;
+}
+.chapter-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;font-style:italic;
+  color:rgba(28,27,26,.45);
+  transition:color .15s;
+}
+.chapter-item:hover .chapter-name{color:var(--dark)}
+.chapter-name.visible{color:rgba(28,27,26,.75)}
+.chapter-lock{
+  margin-left:auto;flex-shrink:0;
+  font-size:7px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(28,27,26,.2);
+}
+
+.manual-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:24px;
+  border-top:1px solid var(--border);
+}
+.manual-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-weight:300;color:var(--dark);
+  line-height:1;
+}
+.manual-price small{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:.1em;color:var(--muted);
+  display:block;margin-top:4px;
+}
+.btn-buy{
+  background:var(--dark);color:var(--parchment);
+  font-size:8px;letter-spacing:.18em;text-transform:uppercase;
+  padding:12px 22px;
+  transition:all .2s;
+  display:flex;align-items:center;gap:8px;
+}
+.btn-buy:hover{background:var(--dark-mid)}
+
+/* Coming soon cards */
+.coming-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  margin-top:24px;
+}
+.coming-card{
+  background:var(--parchment);
+  padding:32px 36px;
+  opacity:.6;
+}
+.coming-num{font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.coming-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-style:italic;font-weight:300;
+  color:var(--dark);margin-bottom:6px;
+}
+.coming-badge{
+  font-size:7px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);
+  display:inline-flex;align-items:center;gap:5px;margin-top:10px;
+}
+
+/* Money manual */
+.money-section{
+  padding:72px 0;
+  border-bottom:1px solid var(--border);
+  background:var(--parchment-mid);
+}
+.money-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.money-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,.1);
+  border:1px solid rgba(201,168,76,.2);
+  padding:6px 14px;
+  font-size:7px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:24px;
+}
+.money-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-style:italic;font-weight:300;
+  color:var(--dark);line-height:1.2;margin-bottom:16px;
+}
+.money-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;color:var(--muted);line-height:1.85;margin-bottom:28px;
+}
+.money-pillars{display:flex;flex-direction:column;gap:0}
+.money-pillar{
+  display:flex;gap:16px;padding:16px 0;
+  border-bottom:1px solid var(--border);
+}
+.money-pillar:first-child{border-top:1px solid var(--border)}
+.money-pillar-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:300;color:rgba(201,168,76,.3);
+  line-height:1;flex-shrink:0;width:28px;
+}
+.money-pillar-text{}
+.money-pillar-title{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--dark);margin-bottom:4px}
+.money-pillar-desc{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--muted);font-style:italic;line-height:1.6}
+
+/* ═══════════════════════════════
+   PAGE: TOOLS
+═══════════════════════════════ */
+.tools-page{padding:100px 0 80px}
+.tools-hero{
+  text-align:center;
+  padding-bottom:64px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:64px;
+}
+.tools-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(44px,5vw,64px);
+  font-style:italic;font-weight:300;
+  color:var(--dark);margin-bottom:16px;
+}
+.tools-sub{
+  font-size:11px;letter-spacing:.1em;color:var(--muted);
+  max-width:440px;margin:0 auto;line-height:1.9;
+}
+
+/* Rate Calculator */
+.tool-card{
+  background:var(--parchment-deep);
+  border-bottom:2px solid var(--brass);
+  padding:52px;
+  margin-bottom:24px;
+}
+.tool-header{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  margin-bottom:40px;
+}
+.tool-badge{
+  font-size:7px;letter-spacing:.22em;text-transform:uppercase;
+  background:rgba(106,116,98,.1);color:var(--sage);
+  padding:5px 12px;
+  display:inline-block;margin-bottom:12px;
+}
+.tool-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;font-style:italic;font-weight:300;color:var(--dark);
+}
+.tool-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;color:var(--muted);
+  line-height:1.8;max-width:400px;
+}
+
+/* Calculator inputs */
+.calc-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  margin-bottom:32px;
+}
+.calc-field{display:flex;flex-direction:column;gap:8px}
+.calc-label{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.calc-input{
+  background:var(--parchment);
+  border:1px solid var(--border);
+  padding:13px 16px;
+  font-family:'DM Mono',monospace;
+  font-size:14px;color:var(--dark);
+  outline:none;
+  transition:border-color .2s;
+  width:100%;
+}
+.calc-input:focus{border-color:var(--brass)}
+.calc-select{
+  background:var(--parchment);
+  border:1px solid var(--border);
+  padding:13px 16px;
+  font-family:'DM Mono',monospace;
+  font-size:13px;color:var(--dark);
+  outline:none;cursor:pointer;
+  width:100%;
+  appearance:none;
+  -webkit-appearance:none;
+  transition:border-color .2s;
+}
+.calc-select:focus{border-color:var(--brass)}
+
+.calc-btn{
+  background:var(--dark);color:var(--parchment);
+  font-size:8px;letter-spacing:.2em;text-transform:uppercase;
+  padding:14px 28px;
+  transition:all .2s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.calc-btn:hover{background:var(--dark-mid)}
+
+.calc-result{
+  display:none;
+  background:var(--parchment);
+  border:1px solid var(--border);
+  padding:32px;
+  margin-top:24px;
+}
+.calc-result.visible{display:block}
+.calc-result-label{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:8px}
+.calc-result-value{
+  font-family:'Cormorant Garamond',serif;
+  font-size:52px;font-weight:300;color:var(--dark);
+  line-height:1;margin-bottom:4px;
+}
+.calc-result-sub{font-size:10px;letter-spacing:.1em;color:var(--muted);margin-bottom:16px}
+.calc-result-note{
+  font-family:'Cormorant Garamond',serif;
+  font-size:14px;font-style:italic;color:var(--muted);
+  line-height:1.7;padding-top:16px;border-top:1px solid var(--border);
+}
+
+/* Invoice generator */
+.invoice-card{
+  background:var(--parchment-deep);
+  border-bottom:2px solid var(--sage);
+  padding:52px;
+  margin-bottom:24px;
+}
+.invoice-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px}
+.invoice-items{margin-bottom:24px}
+.invoice-item-row{
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;
+  margin-bottom:10px;
+}
+.invoice-total-row{
+  display:flex;justify-content:flex-end;gap:24px;
+  padding-top:16px;border-top:1px solid var(--border);
+}
+.invoice-total-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.invoice-total-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:300;color:var(--dark);
+}
+
+/* Agency calc */
+.agency-card{
+  background:var(--parchment-deep);
+  border-bottom:2px solid var(--rust);
+  padding:52px;
+}
+.agency-result-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  margin-top:24px;
+}
+.agency-result-cell{
+  background:var(--parchment);
+  padding:24px 28px;
+}
+.agency-result-label{font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.agency-result-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:300;color:var(--dark);
+}
+.agency-result-val.highlight{color:var(--brass)}
+
+/* ═══════════════════════════════
+   PAGE: THE APP
+═══════════════════════════════ */
+.app-page{padding:100px 0 80px}
+.app-hero{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:80px;align-items:center;
+  padding-bottom:80px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:80px;
+}
+.app-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.15);
+  padding:6px 14px;
+  font-size:7px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--brass);margin-bottom:24px;
+}
+.app-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--brass);animation:pulse 2s infinite}
+.app-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(44px,5vw,64px);
+  font-style:italic;font-weight:300;
+  color:var(--dark);line-height:1.1;margin-bottom:20px;
+}
+.app-sub{font-size:11px;letter-spacing:.1em;color:var(--muted);line-height:1.9;max-width:420px;margin-bottom:36px}
+
+/* Waitlist form */
+.waitlist-form{display:flex;gap:0;max-width:380px;margin-bottom:14px}
+.waitlist-input{
+  flex:1;background:var(--parchment-deep);
+  border:1px solid var(--border);border-right:none;
+  padding:13px 16px;
+  font-family:'DM Mono',monospace;font-size:12px;color:var(--dark);
+  outline:none;transition:border-color .2s;
+}
+.waitlist-input:focus{border-color:var(--brass)}
+.waitlist-input::placeholder{color:var(--muted)}
+.waitlist-btn{
+  background:var(--dark);color:var(--parchment);
+  font-size:8px;letter-spacing:.18em;text-transform:uppercase;
+  padding:13px 20px;white-space:nowrap;
+  transition:background .2s;
+}
+.waitlist-btn:hover{background:var(--dark-mid)}
+.waitlist-note{font-size:8px;letter-spacing:.12em;color:var(--muted)}
+
+/* Phone mockup */
+.phone-mockup{
+  width:280px;height:520px;
+  background:var(--dark);
+  border-radius:32px;
+  border:1.5px solid rgba(201,168,76,.2);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  position:relative;
+  box-shadow:0 24px 80px rgba(28,27,26,.2);
+  margin:0 auto;
+}
+.phone-status{
+  height:32px;background:rgba(0,0,0,.3);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;flex-shrink:0;
+}
+.phone-time{font-size:9px;color:rgba(239,231,220,.6);letter-spacing:.05em}
+.phone-signal{display:flex;align-items:center;gap:3px}
+.phone-signal span{width:3px;background:rgba(239,231,220,.4);border-radius:1px}
+.phone-signal span:nth-child(1){height:4px}
+.phone-signal span:nth-child(2){height:6px}
+.phone-signal span:nth-child(3){height:8px}
+.phone-signal span:nth-child(4){height:10px}
+.phone-header{
+  padding:20px 20px 14px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  flex-shrink:0;
+}
+.phone-brand{display:flex;align-items:baseline;gap:0;margin-bottom:4px}
+.phone-brand-num{font-family:'Playfair Display',serif;font-size:14px;font-weight:900;color:#f0e8d4;letter-spacing:-.02em}
+.phone-brand-A{font-family:'Playfair Display',serif;font-size:9px;font-weight:700;color:var(--brass);margin-left:1px}
+.phone-greeting{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;font-style:italic;color:rgba(240,232,212,.7);
+}
+.phone-date{font-size:8px;letter-spacing:.08em;color:rgba(255,255,255,.2)}
+.phone-content{flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.phone-section-label{font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,168,76,.5);margin-bottom:2px;margin-top:4px}
+.phone-item{
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:4px;
+  display:grid;grid-template-columns:36px 1fr;gap:8px;align-items:start;
+}
+.phone-item.active{border-color:rgba(201,168,76,.2);background:rgba(201,168,76,.04)}
+.phone-item-time{font-size:8px;color:rgba(201,168,76,.7);letter-spacing:.04em;padding-top:1px}
+.phone-item-info span{
+  font-family:'Cormorant Garamond',serif;
+  font-size:12px;font-style:italic;color:rgba(240,232,212,.65);
+  display:block;line-height:1.3;
+}
+.phone-item-info small{font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.phone-nav{
+  height:48px;border-top:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:space-around;
+  flex-shrink:0;padding:0 8px;
+}
+.phone-nav-icon{
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:6px;
+}
+.phone-nav-icon.active{background:rgba(201,168,76,.1)}
+.phone-nav-dot{width:18px;height:1.5px;background:rgba(255,255,255,.2);border-radius:1px}
+.phone-nav-icon.active .phone-nav-dot{background:rgba(201,168,76,.8)}
+
+/* App features */
+.app-features{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--border);border:1px solid var(--border);
+}
+.app-feature{
+  background:var(--parchment);
+  padding:36px;
+}
+.app-feature-icon{
+  width:36px;height:36px;
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+}
+.app-feature-icon-inner{width:14px;height:1.5px;background:var(--brass);display:block}
+.app-feature-title{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark);margin-bottom:8px}
+.app-feature-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;color:var(--muted);line-height:1.75;
+}
+
+/* ═══════════════════════════════
+   PAGE: JOURNAL
+═══════════════════════════════ */
+.journal-page{padding:100px 0 80px}
+.journal-hero{
+  padding-bottom:64px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:64px;
+}
+.journal-intro{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;
+}
+.journal-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(48px,5vw,68px);
+  font-style:italic;font-weight:300;
+  color:var(--dark);line-height:1.05;
+}
+.journal-desc{font-size:11px;letter-spacing:.1em;color:var(--muted);line-height:1.9}
+
+/* Articles */
+.journal-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--border);border:1px solid var(--border);
+  margin-bottom:24px;
+}
+.journal-featured{
+  grid-column:1/-1;
+  background:var(--parchment-deep);
+  padding:52px;
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;
+  border-bottom:1px solid var(--border);
+}
+.journal-card{
+  background:var(--parchment-deep);
+  padding:40px;
+  transition:background .2s;cursor:pointer;
+}
+.journal-card:hover{background:var(--parchment-mid)}
+.journal-tag{
+  font-size:7px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:16px;
+  display:flex;align-items:center;gap:8px;
+}
+.journal-tag::before{content:'';width:16px;height:1px;background:var(--sage);opacity:.5}
+.journal-card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-style:italic;font-weight:300;
+  color:var(--dark);line-height:1.3;margin-bottom:12px;
+}
+.journal-card-title.large{font-size:32px}
+.journal-card-excerpt{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px;
+}
+.journal-card-meta{
+  font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  display:flex;gap:16px;
+}
+.journal-card-meta span+span::before{content:'·';margin-right:16px}
+.journal-read-more{
+  font-size:8px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dark);display:flex;align-items:center;gap:6px;margin-top:20px;
+  transition:gap .2s;
+}
+.journal-card:hover .journal-read-more{gap:10px}
+
+/* Field notes subscribe */
+.field-notes{
+  background:var(--parchment-mid);
+  padding:56px;
+  border:1px solid var(--border);
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+}
+.field-notes-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-style:italic;font-weight:300;
+  color:var(--dark);line-height:1.2;margin-bottom:10px;
+}
+.field-notes-sub{font-size:10px;letter-spacing:.1em;color:var(--muted);line-height:1.8}
+.field-notes-form{display:flex;gap:0}
+.field-notes-input{
+  flex:1;background:var(--parchment);
+  border:1px solid var(--border);border-right:none;
+  padding:13px 16px;
+  font-family:'DM Mono',monospace;font-size:12px;color:var(--dark);
+  outline:none;transition:border-color .2s;
+}
+.field-notes-input:focus{border-color:var(--brass)}
+.field-notes-input::placeholder{color:var(--muted)}
+.field-notes-btn{
+  background:var(--dark);color:var(--parchment);
+  font-size:8px;letter-spacing:.18em;text-transform:uppercase;
+  padding:13px 20px;white-space:nowrap;
+  transition:background .2s;
+}
+.field-notes-btn:hover{background:var(--dark-mid)}
+
+/* ═══════════════════════════════
+   EMAIL CAPTURE (shared)
+═══════════════════════════════ */
+.email-section{
+  background:var(--dark);
+  padding:88px 0;
+}
+.email-inner{text-align:center;max-width:520px;margin:0 auto}
+.email-eyebrow{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,168,76,.6);margin-bottom:20px;display:block}
+.email-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(40px,4vw,56px);
+  font-weight:300;font-style:italic;
+  color:var(--parchment);margin-bottom:14px;
+}
+.email-sub{font-size:10px;letter-spacing:.1em;color:rgba(239,231,220,.3);line-height:1.9;margin-bottom:36px}
+.email-form{display:flex;max-width:400px;margin:0 auto 14px;gap:0}
+.email-input{
+  flex:1;background:rgba(239,231,220,.05);
+  border:1px solid rgba(239,231,220,.1);border-right:none;
+  color:var(--parchment);font-family:'DM Mono',monospace;font-size:12px;
+  padding:13px 18px;outline:none;
+  transition:border-color .2s;
+}
+.email-input:focus{border-color:rgba(201,168,76,.4)}
+.email-input::placeholder{color:rgba(239,231,220,.2)}
+.email-btn{
+  background:var(--brass);color:var(--dark);border:none;
+  font-family:'DM Mono',monospace;
+  font-size:8px;letter-spacing:.2em;text-transform:uppercase;
+  padding:13px 20px;white-space:nowrap;font-weight:500;
+  transition:background .2s;
+}
+.email-btn:hover{background:var(--brass-dim)}
+.email-note{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:rgba(239,231,220,.15)}
+.email-promises{display:flex;justify-content:center;gap:32px;margin-top:28px;flex-wrap:wrap}
+.email-promise{
+  font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(239,231,220,.2);
+  display:flex;align-items:center;gap:6px;
+}
+.email-promise::before{content:'—';color:rgba(201,168,76,.4)}
+
+/* ═══════════════════════════════
+   FOOTER
+═══════════════════════════════ */
+.footer{
+  background:var(--parchment);
+  padding:60px 0 0;
+  border-top:1px solid var(--border);
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;
+  gap:48px;margin-bottom:48px;
+}
+.footer-brand-mark{display:flex;align-items:baseline;gap:0;margin-bottom:10px}
+.footer-brand-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--dark);letter-spacing:-.02em}
+.footer-brand-A{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--brass);margin-left:1px}
+.footer-desc{font-size:11px;color:var(--muted);line-height:1.8;max-width:200px;margin-bottom:16px}
+.footer-social{display:flex;gap:10px}
+.footer-social-link{
+  width:28px;height:28px;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:8px;color:var(--muted);
+  transition:all .2s;
+}
+.footer-social-link:hover{border-color:var(--dark);color:var(--dark)}
+.footer-col-label{font-size:7px;letter-spacing:.25em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;display:block}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-link{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;font-style:italic;color:var(--muted);
+  transition:color .15s;cursor:pointer;
+}
+.footer-link:hover{color:var(--dark)}
+.footer-bottom{
+  border-top:1px solid var(--border);
+  padding:18px 0;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-copy{font-size:8px;letter-spacing:.12em;color:rgba(28,27,26,.25)}
+
+/* ═══════════════════════════════
+   SUCCESS MESSAGE
+═══════════════════════════════ */
+.success-msg{
+  display:none;
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;font-style:italic;
+  color:var(--sage);margin-top:10px;
+}
+.success-msg.visible{display:block}
+
+/* ═══════════════════════════════
+   MOBILE MENU
+═══════════════════════════════ */
+.mobile-menu{
+  display:none;
+  position:fixed;top:60px;left:0;right:0;
+  background:rgba(239,231,220,.98);
+  backdrop-filter:blur(12px);
+  z-index:99;
+  padding:24px;
+  border-bottom:1px solid var(--border);
+  flex-direction:column;gap:0;
+}
+.mobile-menu.open{display:flex}
+.mobile-tab{
+  padding:14px 0;
+  border-bottom:1px solid var(--border-light);
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);cursor:pointer;
+  transition:color .15s;
+}
+.mobile-tab:hover,.mobile-tab.active{color:var(--dark)}
+
+/* ═══════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════ */
+.reveal{
+  opacity:0;transform:translateY(20px);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* ═══════════════════════════════
+   RESPONSIVE
+═══════════════════════════════ */
+@media(max-width:960px){
+  .nav-tabs{display:none}
+  .nav-join{display:none}
+  .nav-mobile-toggle{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-image{height:280px}
+  .manuals-grid{grid-template-columns:1fr}
+  .coming-grid{grid-template-columns:1fr}
+  .money-inner{grid-template-columns:1fr;gap:40px}
+  .app-hero{grid-template-columns:1fr;gap:48px}
+  .app-features{grid-template-columns:1fr}
+  .journal-grid{grid-template-columns:1fr}
+  .journal-featured{grid-template-columns:1fr;gap:24px}
+  .journal-intro{grid-template-columns:1fr;gap:24px}
+  .field-notes{grid-template-columns:1fr;gap:28px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .email-promises{gap:16px}
+  .calc-grid{grid-template-columns:1fr}
+  .invoice-grid{grid-template-columns:1fr}
+  .agency-result-grid{grid-template-columns:1fr}
+  .tools-page,.app-page,.journal-page{padding:88px 0 60px}
+}
+@media(max-width:600px){
+  .container{padding:0 20px}
+  .nav{padding:0 20px}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column;gap:20px}
+  .hero-stat{border-right:none;border-bottom:1px solid var(--border);padding-bottom:16px;margin-right:0}
+  .hero-stat:last-child{border-bottom:none;padding-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav class="nav" id="mainNav">
+  <div class="nav-mark" onclick="showPage('series')">
+    <span class="nav-num">48</span>
+    <span class="nav-A">A</span>
+  </div>
+  <div class="nav-tabs">
+    <div class="nav-tab active" data-page="series" onclick="showPage('series')">Series 01</div>
+    <div class="nav-tab" data-page="tools" onclick="showPage('tools')">Tools</div>
+    <div class="nav-tab" data-page="app" onclick="showPage('app')">The App</div>
+    <div class="nav-tab" data-page="journal" onclick="showPage('journal')">Journal</div>
+  </div>
+  <div class="nav-right">
+    <div class="nav-join" onclick="scrollToEmail()">Join the List</div>
+    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-tab active" data-page="series" onclick="showPage('series');toggleMobileMenu()">Series 01</div>
+  <div class="mobile-tab" data-page="tools" onclick="showPage('tools');toggleMobileMenu()">Tools</div>
+  <div class="mobile-tab" data-page="app" onclick="showPage('app');toggleMobileMenu()">The App</div>
+  <div class="mobile-tab" data-page="journal" onclick="showPage('journal');toggleMobileMenu()">Journal</div>
+  <div style="padding-top:16px">
+    <div class="btn-primary" onclick="scrollToEmail();toggleMobileMenu()" style="justify-content:center">Join the List</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     PAGE: SERIES 01
+══════════════════════════════════ -->
+<div class="page active" id="page-series">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-kicker reveal">Series 01 · Private Kitchen</div>
+          <h1 class="hero-h1 reveal reveal-delay-1">For the private<br>household.</h1>
+          <p class="hero-sub reveal reveal-delay-2">Field manuals, operational tools and career intelligence for the private service professional.</p>
+          <div class="hero-actions reveal reveal-delay-3">
+            <div class="btn-primary" onclick="document.getElementById('manuals-anchor').scrollIntoView({behavior:'smooth'})">Explore Manuals →</div>
+            <div class="btn-secondary" onclick="scrollToEmail()">Join the List</div>
+          </div>
+          <div class="hero-stats reveal">
+            <div class="hero-stat">
+              <span class="hero-stat-n">2</span>
+              <span class="hero-stat-l">Manuals Available</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-n">5</span>
+              <span class="hero-stat-l">In the Series</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-n">$29</span>
+              <span class="hero-stat-l">Per Manual</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image reveal reveal-delay-1">
+          <div class="hero-image-inner">
+            <div class="hero-image-tag">Photography direction — warm, editorial, natural light</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Series Strip -->
+  <div class="series-strip">
+    <div class="series-strip-inner">
+      <div class="series-strip-label">Series 01 · Private Kitchen</div>
+      <div class="series-items">
+        <div class="series-item live" onclick="document.getElementById('manuals-anchor').scrollIntoView({behavior:'smooth'})">No.1 · The First Kitchen<span class="series-live-dot"></span></div>
+        <div class="series-item">No.2 · The Freelance Season</div>
+        <div class="series-item">No.3 · The Permanent Transition</div>
+        <div class="series-item live" onclick="document.getElementById('manuals-anchor').scrollIntoView({behavior:'smooth'})">No.4 · The Sole Charge Kitchen<span class="series-live-dot"></span></div>
+        <div class="series-item">No.5 · The International Kitchen</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manuals -->
+  <section class="manuals-section" id="manuals-anchor">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-title-block">
+          <span class="eyebrow">Available Now</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;font-style:italic;color:var(--dark)">The Field Manuals</h2>
+        </div>
+        <div class="section-view-all" onclick="scrollToEmail()">Join list for founding pricing →</div>
+      </div>
+
+      <div class="manuals-grid">
+
+        <!-- Manual 01 -->
+        <div class="manual-card reveal">
+          <div class="manual-id">48A · Field Manual · No. 01</div>
+          <h3 class="manual-title">The First Kitchen</h3>
+          <div class="manual-sub">Series 01 · Private Kitchen</div>
+          <p class="manual-desc">For the chef transitioning from restaurant, hotel or commercial kitchen into private household service. The real picture — before the first door.</p>
+          <div class="chapter-list">
+            <div class="chapter-item">
+              <span class="chapter-num">01</span>
+              <span class="chapter-name visible">The Accidental Entry</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">02</span>
+              <span class="chapter-name visible">Finding Work — Agency vs. Independent</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">03</span>
+              <span class="chapter-name visible">The First Day at a House You've Never Been To</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">04</span>
+              <span class="chapter-name">The Professional Relationship</span>
+              <span class="chapter-lock">Preview</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">05</span>
+              <span class="chapter-name">Pricing Yourself — The Numbers</span>
+              <span class="chapter-lock">Preview</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">06</span>
+              <span class="chapter-name">Invoicing — Service Fees & Getting Paid</span>
+              <span class="chapter-lock">—</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">07</span>
+              <span class="chapter-name">What You Wish You Had Known</span>
+              <span class="chapter-lock">—</span>
+            </div>
+          </div>
+          <div class="manual-footer">
+            <div class="manual-price">
+              $29
+              <small>One-time purchase · Instant download</small>
+            </div>
+            <a href="YOUR_PAYSTACK_LINK_HERE" class="btn-buy" target="_blank">Buy Now →</a>
+          </div>
+        </div>
+
+        <!-- Manual 04 -->
+        <div class="manual-card reveal reveal-delay-1">
+          <div class="manual-id">48A · Field Manual · No. 04</div>
+          <h3 class="manual-title">The Sole Charge Kitchen</h3>
+          <div class="manual-sub">Series 01 · Private Kitchen</div>
+          <p class="manual-desc">For the permanent chef who has absorbed full household management responsibility. No support structure above you. Responsible for everything.</p>
+          <div class="chapter-list">
+            <div class="chapter-item">
+              <span class="chapter-num">01</span>
+              <span class="chapter-name visible">The Weight of Sole Charge</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">02</span>
+              <span class="chapter-name visible">Managing Up — The Principal Relationship</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">03</span>
+              <span class="chapter-name visible">The Interrupted Kitchen</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">04</span>
+              <span class="chapter-name">Competing Preferences</span>
+              <span class="chapter-lock">Preview</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">05</span>
+              <span class="chapter-name">Sourcing Under Pressure</span>
+              <span class="chapter-lock">Preview</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">06</span>
+              <span class="chapter-name">Managing Without a Manager</span>
+              <span class="chapter-lock">—</span>
+            </div>
+            <div class="chapter-item">
+              <span class="chapter-num">07</span>
+              <span class="chapter-name">Sustainable Systems</span>
+              <span class="chapter-lock">—</span>
+            </div>
+          </div>
+          <div class="manual-footer">
+            <div class="manual-price">
+              $29
+              <small>One-time purchase · Instant download</small>
+            </div>
+            <a href="YOUR_PAYSTACK_LINK_04_HERE" class="btn-buy" target="_blank">Buy Now →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Coming soon -->
+      <div class="coming-grid reveal">
+        <div class="coming-card">
+          <div class="coming-num">48A · Field Manual · No. 02</div>
+          <div class="coming-title">The Freelance Season</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--muted);font-style:italic;line-height:1.7">Multiple clients, the feast-or-famine cycle, building independence from an agency.</p>
+          <div class="coming-badge">In Progress</div>
+        </div>
+        <div class="coming-card">
+          <div class="coming-num">48A · Field Manual · No. 03</div>
+          <div class="coming-title">The Permanent Transition</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--muted);font-style:italic;line-height:1.7">The contract conversation, the boredom nobody warns you about, the thick skin required.</p>
+          <div class="coming-badge">In Progress</div>
+        </div>
+        <div class="coming-card">
+          <div class="coming-num">48A · Field Manual · No. 05</div>
+          <div class="coming-title">The International Kitchen</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--muted);font-style:italic;line-height:1.7">Working abroad — sourcing, language barriers, cultural intelligence, remote operations.</p>
+          <div class="coming-badge">In Progress</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Money Manual -->
+  <section class="money-section">
+    <div class="container">
+      <div class="money-inner reveal">
+        <div>
+          <span class="money-badge">Coming Soon</span>
+          <h2 class="money-h">The Private Chef's<br>Money Manual</h2>
+          <p class="money-desc">The financial guide the industry never provided. Tax, feast-or-famine income management, and the salary negotiation conversation that most private chefs never had.</p>
+          <div class="btn-secondary" onclick="scrollToEmail()" style="display:inline-flex">Notify me when it launches →</div>
+        </div>
+        <div class="money-pillars">
+          <div class="money-pillar">
+            <div class="money-pillar-num">01</div>
+            <div class="money-pillar-text">
+              <div class="money-pillar-title">Feast or Famine</div>
+              <div class="money-pillar-desc">Managing irregular income across peak seasons and quiet periods. Building financial stability through volatility.</div>
+            </div>
+          </div>
+          <div class="money-pillar">
+            <div class="money-pillar-num">02</div>
+            <div class="money-pillar-text">
+              <div class="money-pillar-title">Tax Compliance</div>
+              <div class="money-pillar-desc">Provisional tax, deductibles, when to engage an accountant. For freelance and permanent private chefs.</div>
+            </div>
+          </div>
+          <div class="money-pillar">
+            <div class="money-pillar-num">03</div>
+            <div class="money-pillar-text">
+              <div class="money-pillar-title">Contract Negotiation</div>
+              <div class="money-pillar-desc">The yearly increase clause, scope creep protection, benefits in kind. What seven years without negotiating costs in real terms.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email -->
+  <section class="email-section" id="email-anchor">
+    <div class="container">
+      <div class="email-inner reveal">
+        <span class="email-eyebrow">Join the List</span>
+        <h2 class="email-h">Be first. Pay less.</h2>
+        <p class="email-sub">Every manual launches to the list first at founding member pricing. Field notes and series updates — no noise.</p>
+        <div class="email-form">
+          <input class="email-input" type="email" placeholder="Your email address" id="email1">
+          <button class="email-btn" onclick="handleEmailSubmit('email1','success1')">Join →</button>
+        </div>
+        <div class="success-msg" id="success1">You're on the list. Welcome to 48A.</div>
+        <div class="email-note">No spam. Unsubscribe anytime.</div>
+        <div class="email-promises">
+          <span class="email-promise">Founding member pricing</span>
+          <span class="email-promise">New manual alerts</span>
+          <span class="email-promise">Free tools early access</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ══════════════════════════════════
+     PAGE: TOOLS
+══════════════════════════════════ -->
+<div class="page" id="page-tools">
+
+  <section class="tools-page">
+    <div class="container">
+      <div class="tools-hero reveal">
+        <span class="eyebrow" style="display:block;text-align:center;margin-bottom:12px">Free Tools</span>
+        <div class="rule" style="margin:0 auto 24px"></div>
+        <h1 class="tools-h1">The numbers, calculated.</h1>
+        <p class="tools-sub">Interactive tools that answer the questions every private service professional faces — but rarely has a framework for.</p>
+      </div>
+
+      <!-- Rate Calculator -->
+      <div class="tool-card reveal">
+        <div class="tool-header">
+          <div>
+            <span class="tool-badge">Free Tool — No signup required</span>
+            <h2 class="tool-h">Chef Rate Calculator</h2>
+            <p class="tool-desc">Enter your target annual income and working pattern. Get your minimum floor rate — the number below which you are working at a loss.</p>
+          </div>
+        </div>
+        <div class="calc-grid">
+          <div class="calc-field">
+            <label class="calc-label">Target Annual Income</label>
+            <input class="calc-input" type="number" id="annual-income" placeholder="e.g. 50000" oninput="calcRate()">
+          </div>
+          <div class="calc-field">
+            <label class="calc-label">Currency</label>
+            <select class="calc-select" id="currency" onchange="calcRate()">
+              <option value="$">USD — $</option>
+              <option value="£">GBP — £</option>
+              <option value="€">EUR — €</option>
+              <option value="R">ZAR — R</option>
+              <option value="AED">AED — د.إ</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label">Working Days per Week</label>
+            <select class="calc-select" id="days-week" onchange="calcRate()">
+              <option value="5">5 days</option>
+              <option value="6">6 days</option>
+              <option value="4">4 days</option>
+              <option value="7">7 days (sole charge)</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label">Weeks Working per Year</label>
+            <select class="calc-select" id="weeks-year" onchange="calcRate()">
+              <option value="48">48 weeks</option>
+              <option value="44">44 weeks</option>
+              <option value="40">40 weeks (seasonal)</option>
+              <option value="52">52 weeks</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-result" id="rate-result">
+          <div class="calc-result-label">Your Floor Day Rate</div>
+          <div class="calc-result-value" id="rate-value">—</div>
+          <div class="calc-result-sub" id="rate-sub">per day · before expenses</div>
+          <div class="calc-result-note" id="rate-note">This is your floor — the minimum rate to achieve your target income. Add 20–30% for taxes, equipment, and professional costs. The rate you quote clients should sit above this number, not at it.</div>
+        </div>
+      </div>
+
+      <!-- Agency Markup Calculator -->
+      <div class="agency-card reveal">
+        <div class="tool-header">
+          <div>
+            <span class="tool-badge" style="background:rgba(184,137,108,.08);color:var(--rust);border-color:rgba(184,137,108,.15)">Free Tool</span>
+            <h2 class="tool-h">Agency Markup Calculator</h2>
+            <p class="tool-desc">Enter what the agency pays you per day. See what the client is likely paying — and understand what your market rate actually signals.</p>
+          </div>
+        </div>
+        <div class="calc-grid" style="max-width:500px">
+          <div class="calc-field">
+            <label class="calc-label">Your Day Rate (what agency pays you)</label>
+            <input class="calc-input" type="number" id="agency-rate" placeholder="e.g. 400" oninput="calcMarkup()">
+          </div>
+          <div class="calc-field">
+            <label class="calc-label">Currency</label>
+            <select class="calc-select" id="agency-currency" onchange="calcMarkup()">
+              <option value="$">USD — $</option>
+              <option value="£">GBP — £</option>
+              <option value="€">EUR — €</option>
+              <option value="R">ZAR — R</option>
+              <option value="AED">AED</option>
+            </select>
+          </div>
+        </div>
+        <div class="agency-result-grid" id="markup-result" style="display:none">
+          <div class="agency-result-cell">
+            <div class="agency-result-label">You receive</div>
+            <div class="agency-result-val" id="markup-you">—</div>
+          </div>
+          <div class="agency-result-cell">
+            <div class="agency-result-label">Client likely pays (×1.5)</div>
+            <div class="agency-result-val highlight" id="markup-client">—</div>
+          </div>
+          <div class="agency-result-cell">
+            <div class="agency-result-label">Agency margin</div>
+            <div class="agency-result-val" id="markup-margin">—</div>
+          </div>
+        </div>
+        <div id="markup-note" style="display:none;margin-top:16px">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:var(--muted);line-height:1.7">Industry standard for specialist placements is 40–100% markup. When you work directly with a client, they are comparing your rate to this total — not to your take-home.</p>
+        </div>
+      </div>
+
+      <!-- Invoice Generator -->
+      <div class="invoice-card reveal">
+        <div class="tool-header">
+          <div>
+            <span class="tool-badge" style="background:rgba(106,116,98,.08);color:var(--sage);border-color:rgba(106,116,98,.15)">Included with Manual No.1</span>
+            <h2 class="tool-h">Invoice Generator</h2>
+            <p class="tool-desc">A correctly structured private chef invoice — service fee separated from grocery cost. Fill in the fields and download.</p>
+          </div>
+        </div>
+        <div class="invoice-grid">
+          <div class="calc-field">
+            <label class="calc-label">Client Name</label>
+            <input class="calc-input" type="text" id="inv-client" placeholder="Client or household name">
+          </div>
+          <div class="calc-field">
+            <label class="calc-label">Service Date</label>
+            <input class="calc-input" type="date" id="inv-date">
+          </div>
+          <div class="calc-field">
+            <label class="calc-label">Invoice Currency</label>
+            <select class="calc-select" id="inv-currency">
+              <option value="$">USD — $</option>
+              <option value="£">GBP — £</option>
+              <option value="€">EUR — €</option>
+              <option value="R">ZAR — R</option>
+            </select>
+          </div>
+        </div>
+        <div class="invoice-items">
+          <div class="invoice-item-row" style="margin-bottom:8px">
+            <span class="calc-label">Description</span>
+            <span class="calc-label">Qty</span>
+            <span class="calc-label">Amount</span>
+          </div>
+          <div class="invoice-item-row">
+            <input class="calc-input" type="text" placeholder="Service fee — 1 day" id="inv-desc1" style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic">
+            <input class="calc-input" type="number" placeholder="1" id="inv-qty1" style="text-align:center">
+            <input class="calc-input" type="number" placeholder="0.00" id="inv-amt1" oninput="calcInvoice()">
+          </div>
+          <div class="invoice-item-row">
+            <input class="calc-input" type="text" placeholder="Grocery cost — receipts attached" id="inv-desc2" style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic">
+            <input class="calc-input" type="number" placeholder="1" id="inv-qty2" style="text-align:center">
+            <input class="calc-input" type="number" placeholder="0.00" id="inv-amt2" oninput="calcInvoice()">
+          </div>
+          <div class="invoice-item-row">
+            <input class="calc-input" type="text" placeholder="Shopping fee (optional)" id="inv-desc3" style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic">
+            <input class="calc-input" type="number" placeholder="1" id="inv-qty3" style="text-align:center">
+            <input class="calc-input" type="number" placeholder="0.00" id="inv-amt3" oninput="calcInvoice()">
+          </div>
+        </div>
+        <div class="invoice-total-row">
+          <span class="invoice-total-label">Total</span>
+          <span class="invoice-total-val" id="inv-total">—</span>
+        </div>
+        <div style="margin-top:24px;display:flex;gap:12px">
+          <button class="btn-primary" onclick="generateInvoice()">Download Invoice →</button>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:var(--muted);display:flex;align-items:center">Full version included with Manual No.1</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="email-section" id="email-anchor-tools">
+    <div class="container">
+      <div class="email-inner reveal">
+        <span class="email-eyebrow">More tools coming</span>
+        <h2 class="email-h">Group Pricing Tool.<br>Contract Checklist.<br>Coming soon.</h2>
+        <p class="email-sub">Join the list to be notified when new tools launch — always free for list members first.</p>
+        <div class="email-form">
+          <input class="email-input" type="email" placeholder="Your email address" id="email-tools">
+          <button class="email-btn" onclick="handleEmailSubmit('email-tools','success-tools')">Join →</button>
+        </div>
+        <div class="success-msg" id="success-tools">You're on the list. Welcome to 48A.</div>
+        <div class="email-note">No spam. Unsubscribe anytime.</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ══════════════════════════════════
+     PAGE: THE APP
+══════════════════════════════════ -->
+<div class="page" id="page-app">
+
+  <section class="app-page">
+    <div class="container">
+      <div class="app-hero reveal">
+        <div>
+          <div class="app-badge"><div class="app-badge-dot"></div>In Development</div>
+          <h1 class="app-h">Private kitchen<br>intelligence.<br>In your pocket.</h1>
+          <p class="app-sub">Menus, inventory, guest profiles, service timelines, and dietary tracking — all in one system built specifically for the private household chef.</p>
+          <div class="waitlist-form">
+            <input class="waitlist-input" type="email" placeholder="Join the waitlist" id="email-app">
+            <button class="waitlist-btn" onclick="handleEmailSubmit('email-app','success-app')">Join Waitlist →</button>
+          </div>
+          <div class="success-msg" id="success-app" style="color:var(--sage)">You're on the waitlist. We'll be in touch.</div>
+          <div class="waitlist-note" style="margin-top:10px">Be notified at launch · Founding member pricing</div>
+        </div>
+        <div>
+          <div class="phone-mockup">
+            <div class="phone-status">
+              <span class="phone-time">09:14</span>
+              <div class="phone-brand">
+                <span class="phone-brand-num">48</span>
+                <span class="phone-brand-A">A</span>
+              </div>
+              <div class="phone-signal">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="phone-header">
+              <div class="phone-greeting">Good morning, Anna.</div>
+              <div class="phone-date">Thursday · Today's overview</div>
+            </div>
+            <div class="phone-content">
+              <div class="phone-section-label">Service Today</div>
+              <div class="phone-item active">
+                <div class="phone-item-time">07:00</div>
+                <div class="phone-item-info">
+                  <span>Breakfast · Family of 4</span>
+                  <small>Main House</small>
+                </div>
+              </div>
+              <div class="phone-item">
+                <div class="phone-item-time">11:00</div>
+                <div class="phone-item-info">
+                  <span>Provisioning · Market</span>
+                  <small>14 items</small>
+                </div>
+              </div>
+              <div class="phone-item">
+                <div class="phone-item-time">13:00</div>
+                <div class="phone-item-info">
+                  <span>Lunch · Pool House</span>
+                  <small>6 Guests</small>
+                </div>
+              </div>
+              <div class="phone-item">
+                <div class="phone-item-time">20:00</div>
+                <div class="phone-item-info">
+                  <span>Dinner · Formal</span>
+                  <small>10 Guests · Tasting menu</small>
+                </div>
+              </div>
+              <div class="phone-section-label" style="margin-top:4px">This Week</div>
+              <div class="phone-item">
+                <div class="phone-item-time">Fri</div>
+                <div class="phone-item-info">
+                  <span>Flowers · Arrange by 15:00</span>
+                  <small>Principal request</small>
+                </div>
+              </div>
+            </div>
+            <div class="phone-nav">
+              <div class="phone-nav-icon active"><div class="phone-nav-dot"></div></div>
+              <div class="phone-nav-icon"><div class="phone-nav-dot"></div></div>
+              <div class="phone-nav-icon"><div class="phone-nav-dot"></div></div>
+              <div class="phone-nav-icon"><div class="phone-nav-dot"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="app-features reveal">
+        <div class="app-feature">
+          <div class="app-feature-icon"><span class="app-feature-icon-inner"></span></div>
+          <div class="app-feature-title">Menu Planning</div>
+          <p class="app-feature-desc">Build and save menus by season, occasion, and principal preference. Track dietary requirements across every household member and regular guest.</p>
+        </div>
+        <div class="app-feature">
+          <div class="app-feature-icon"><span class="app-feature-icon-inner"></span></div>
+          <div class="app-feature-title">Inventory & Provisioning</div>
+          <p class="app-feature-desc">Live pantry tracking, automated shopping lists, and supplier management. Never arrive to find the stock you assumed was there.</p>
+        </div>
+        <div class="app-feature">
+          <div class="app-feature-icon"><span class="app-feature-icon-inner"></span></div>
+          <div class="app-feature-title">Guest Profiles</div>
+          <p class="app-feature-desc">Dietary requirements, allergies, preferences, and dislikes for every guest and principal. Recalled automatically when building menus.</p>
+        </div>
+        <div class="app-feature">
+          <div class="app-feature-icon"><span class="app-feature-icon-inner"></span></div>
+          <div class="app-feature-title">Service Timeline</div>
+          <p class="app-feature-desc">Your full working day, mapped by service. Breakfast through dinner, prep schedules, and principal arrival times in one view.</p>
+        </div>
+        <div class="app-feature">
+          <div class="app-feature-icon"><span class="app-feature-icon-inner"></span></div>
+          <div class="app-feature-title">Invoice & Billing</div>
+          <p class="app-feature-desc">Generate correctly structured invoices — service fee separated from grocery cost — directly from your service records.</p>
+        </div>
+        <div class="app-feature">
+          <div class="app-feature-icon"><span class="app-feature-icon-inner"></span></div>
+          <div class="app-feature-title">Multi-Property</div>
+          <p class="app-feature-desc">Manage service across multiple properties and principals. Separate profiles, inventories, and menus for each household.</p>
+        </div>
+      </div>
+
+      <!-- Pricing preview -->
+      <div style="margin-top:48px;border:1px solid var(--border);background:var(--parchment-deep);padding:48px" class="reveal">
+        <div style="text-align:center;margin-bottom:40px">
+          <span class="eyebrow">Pricing — Launching Soon</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;font-weight:300;color:var(--dark)">Built for how private chefs actually work</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)">
+          <div style="background:var(--parchment);padding:36px">
+            <div style="font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">Solo Chef</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--dark);margin-bottom:4px">$29<span style="font-size:16px;color:var(--muted)">/mo</span></div>
+            <div style="font-size:10px;color:var(--muted);margin-bottom:20px;line-height:1.7">Single household, full feature access</div>
+          </div>
+          <div style="background:var(--parchment-mid);padding:36px;border-bottom:2px solid var(--brass)">
+            <div style="font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:12px">Multi-Property</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--dark);margin-bottom:4px">$79<span style="font-size:16px;color:var(--muted)">/mo</span></div>
+            <div style="font-size:10px;color:var(--muted);margin-bottom:20px;line-height:1.7">Up to 4 properties, multiple principals</div>
+          </div>
+          <div style="background:var(--parchment);padding:36px">
+            <div style="font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">Estate</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--dark);margin-bottom:4px">$149<span style="font-size:16px;color:var(--muted)">/mo</span></div>
+            <div style="font-size:10px;color:var(--muted);margin-bottom:20px;line-height:1.7">Unlimited properties, team access</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:24px">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--muted)">Waitlist members receive 40% off at launch for the first year.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ══════════════════════════════════
+     PAGE: JOURNAL
+══════════════════════════════════ -->
+<div class="page" id="page-journal">
+
+  <section class="journal-page">
+    <div class="container">
+      <div class="journal-hero reveal">
+        <div class="journal-intro">
+          <h1 class="journal-h">Field notes<br>from the kitchen.</h1>
+          <div>
+            <p class="journal-desc">Operational intelligence, career reflections and field observations from the private kitchen. Written for the professional who has been there.</p>
+            <div style="margin-top:24px" class="btn-secondary" onclick="scrollToEmail()" style="display:inline-flex;cursor:pointer">Subscribe to field notes →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Articles -->
+      <div class="journal-grid reveal">
+        <div class="journal-featured">
+          <div>
+            <div class="journal-tag">Feature · Series 01</div>
+            <h2 class="journal-card-title large">The 48-hour window: what every new private chef learns the hard way.</h2>
+            <p class="journal-card-excerpt">There is a standard in private household service that nobody writes down and nobody explains. You are expected to know what the household needs 48 hours before they need it. Here is how to build that intelligence from nothing.</p>
+            <div class="journal-read-more">Read the full piece →</div>
+          </div>
+          <div style="background:var(--parchment-mid);height:100%;min-height:200px;display:flex;align-items:flex-end;padding:24px">
+            <span class="journal-card-meta">
+              <span>Anna Rens</span>
+              <span>Field Intelligence</span>
+              <span>8 min read</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="journal-card">
+          <div class="journal-tag">Pricing</div>
+          <h3 class="journal-card-title">Why most private chefs are charging below their floor rate — and how to find yours.</h3>
+          <p class="journal-card-excerpt">The rate you charge is not a negotiating position. It is a reflection of your operational costs, your professional standard, and the market you work in.</p>
+          <div class="journal-card-meta">
+            <span>Anna Rens</span>
+            <span>5 min read</span>
+          </div>
+          <div class="journal-read-more">Read →</div>
+        </div>
+
+        <div class="journal-card">
+          <div class="journal-tag">Career</div>
+          <h3 class="journal-card-title">The principal relationship: what they want, what they say they want, and how to navigate the gap.</h3>
+          <p class="journal-card-excerpt">The private household principal is not a restaurant customer. They are not always able to articulate what they want. Your job is to understand before they ask.</p>
+          <div class="journal-card-meta">
+            <span>Anna Rens</span>
+            <span>6 min read</span>
+          </div>
+          <div class="journal-read-more">Read →</div>
+        </div>
+
+        <div class="journal-card" style="border-top:1px solid var(--border)">
+          <div class="journal-tag">Operations</div>
+          <h3 class="journal-card-title">Agency vs. independent: the financial and operational case for going direct.</h3>
+          <p class="journal-card-excerpt">The agency earns between 40 and 100 percent on top of your rate. At some point in your career, that number becomes too large to ignore.</p>
+          <div class="journal-card-meta">
+            <span>Anna Rens</span>
+            <span>7 min read</span>
+          </div>
+          <div class="journal-read-more">Read →</div>
+        </div>
+
+        <div class="journal-card" style="border-top:1px solid var(--border)">
+          <div class="journal-tag">Contract</div>
+          <h3 class="journal-card-title">Seven years without a raise: what scope creep actually costs in real purchasing power.</h3>
+          <p class="journal-card-excerpt">Inflation at 6% per year for seven years is a 50% reduction in real income. Most permanent private chefs experience this without naming it.</p>
+          <div class="journal-card-meta">
+            <span>Anna Rens</span>
+            <span>4 min read</span>
+          </div>
+          <div class="journal-read-more">Read →</div>
+        </div>
+
+      </div>
+
+      <!-- Field notes subscribe -->
+      <div class="field-notes reveal">
+        <div>
+          <h2 class="field-notes-h">Field notes, delivered.</h2>
+          <p class="field-notes-sub">Operational intelligence from the private kitchen. One email when it's ready — never on a schedule, always worth reading.</p>
+        </div>
+        <div>
+          <div class="field-notes-form">
+            <input class="field-notes-input" type="email" placeholder="Your email address" id="email-journal">
+            <button class="field-notes-btn" onclick="handleEmailSubmit('email-journal','success-journal')">Subscribe →</button>
+          </div>
+          <div class="success-msg" id="success-journal" style="margin-top:10px">Subscribed. First field note coming soon.</div>
+          <div style="font-size:8px;letter-spacing:.12em;color:var(--muted);margin-top:10px">No schedule. No noise. Unsubscribe anytime.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ══════════════════════════════════
+     FOOTER (shared)
+══════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-mark">
+          <span class="footer-brand-num">48</span>
+          <span class="footer-brand-A">A</span>
+        </div>
+        <p class="footer-desc">Private service. Properly documented. Field manuals and operational systems for the private service professional.</p>
+        <div class="footer-social">
+          <a class="footer-social-link" href="https://instagram.com/48astudio" target="_blank" title="Instagram">ig</a>
+        </div>
+      </div>
+      <div>
+        <span class="footer-col-label">Series 01</span>
+        <div class="footer-links">
+          <span class="footer-link" onclick="showPage('series')">No.1 — The First Kitchen</span>
+          <span class="footer-link" onclick="showPage('series')">No.2 — The Freelance Season</span>
+          <span class="footer-link" onclick="showPage('series')">No.3 — The Permanent Transition</span>
+          <span class="footer-link" onclick="showPage('series')">No.4 — The Sole Charge Kitchen</span>
+          <span class="footer-link" onclick="showPage('series')">No.5 — The International Kitchen</span>
+        </div>
+      </div>
+      <div>
+        <span class="footer-col-label">48A</span>
+        <div class="footer-links">
+          <span class="footer-link" onclick="showPage('tools')">Tools</span>
+          <span class="footer-link" onclick="showPage('app')">The App</span>
+          <span class="footer-link" onclick="showPage('journal')">Journal</span>
+          <span class="footer-link" onclick="scrollToEmail()">Join the List</span>
+        </div>
+      </div>
+      <div>
+        <span class="footer-col-label">Contact</span>
+        <div class="footer-links">
+          <span class="footer-link">hello@48a.studio</span>
+          <span class="footer-link">48a.studio</span>
+          <span class="footer-link" style="font-size:13px;color:var(--muted);margin-top:8px;display:block;line-height:1.6">Anna Rens<br>Editor, 48A</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 48A · 48a.studio · All rights reserved</span>
+      <span class="footer-copy">Private service. Properly documented.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+/* ═══════════════════════════════
+   PAGE NAVIGATION
+═══════════════════════════════ */
+function showPage(id){
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  // Show target
+  document.getElementById('page-'+id).classList.add('active');
+  // Update nav tabs
+  document.querySelectorAll('.nav-tab').forEach(t=>{
+    t.classList.toggle('active',t.dataset.page===id);
+  });
+  document.querySelectorAll('.mobile-tab').forEach(t=>{
+    t.classList.toggle('active',t.dataset.page===id);
+  });
+  // Scroll to top
+  window.scrollTo({top:0,behavior:'smooth'});
+  // Trigger reveals
+  setTimeout(triggerReveals,100);
+}
+
+/* ═══════════════════════════════
+   MOBILE MENU
+═══════════════════════════════ */
+function toggleMobileMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+/* ═══════════════════════════════
+   SCROLL
+═══════════════════════════════ */
+function scrollToEmail(){
+  const activePage = document.querySelector('.page.active');
+  const emailSection = activePage.querySelector('[id^="email-anchor"]');
+  if(emailSection){
+    emailSection.scrollIntoView({behavior:'smooth'});
+  } else {
+    showPage('series');
+    setTimeout(()=>{
+      document.getElementById('email-anchor').scrollIntoView({behavior:'smooth'});
+    },300);
+  }
+}
+
+// Nav scroll effect
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20);
+});
+
+/* ═══════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════ */
+function triggerReveals(){
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('in');
+    });
+  },{threshold:0.08});
+  document.querySelectorAll('.page.active .reveal').forEach(el=>{
+    el.classList.remove('in');
+    observer.observe(el);
+  });
+}
+// Initial reveal
+document.addEventListener('DOMContentLoaded',()=>setTimeout(triggerReveals,100));
+
+/* ═══════════════════════════════
+   RATE CALCULATOR
+═══════════════════════════════ */
+function calcRate(){
+  const income = parseFloat(document.getElementById('annual-income').value)||0;
+  const currency = document.getElementById('currency').value;
+  const days = parseInt(document.getElementById('days-week').value)||5;
+  const weeks = parseInt(document.getElementById('weeks-year').value)||48;
+  if(!income){
+    document.getElementById('rate-result').classList.remove('visible');
+    return;
+  }
+  const totalDays = days * weeks;
+  const dayRate = income / totalDays;
+  const recommended = dayRate * 1.25;
+  document.getElementById('rate-value').textContent = currency + Math.round(dayRate).toLocaleString();
+  document.getElementById('rate-sub').textContent = `per day · ${totalDays} working days per year`;
+  document.getElementById('rate-note').textContent = `Your floor is ${currency}${Math.round(dayRate).toLocaleString()}/day. We recommend quoting ${currency}${Math.round(recommended).toLocaleString()}/day minimum to account for unpaid preparation time, equipment, and tax obligations. The rate you quote should sit above this number — not at it.`;
+  document.getElementById('rate-result').classList.add('visible');
+}
+
+/* ═══════════════════════════════
+   AGENCY MARKUP CALCULATOR
+═══════════════════════════════ */
+function calcMarkup(){
+  const rate = parseFloat(document.getElementById('agency-rate').value)||0;
+  const currency = document.getElementById('agency-currency').value;
+  if(!rate){
+    document.getElementById('markup-result').style.display='none';
+    document.getElementById('markup-note').style.display='none';
+    return;
+  }
+  const client15 = rate * 1.5;
+  const margin = client15 - rate;
+  document.getElementById('markup-you').textContent = currency + Math.round(rate).toLocaleString();
+  document.getElementById('markup-client').textContent = currency + Math.round(client15).toLocaleString();
+  document.getElementById('markup-margin').textContent = currency + Math.round(margin).toLocaleString() + ' (33%)';
+  document.getElementById('markup-result').style.display='grid';
+  document.getElementById('markup-note').style.display='block';
+}
+
+/* ═══════════════════════════════
+   INVOICE CALCULATOR
+═══════════════════════════════ */
+function calcInvoice(){
+  const a1 = parseFloat(document.getElementById('inv-amt1').value)||0;
+  const a2 = parseFloat(document.getElementById('inv-amt2').value)||0;
+  const a3 = parseFloat(document.getElementById('inv-amt3').value)||0;
+  const currency = document.getElementById('inv-currency').value;
+  const total = a1+a2+a3;
+  document.getElementById('inv-total').textContent = total>0 ? currency+total.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
+}
+
+function generateInvoice(){
+  const client = document.getElementById('inv-client').value||'Client';
+  const date = document.getElementById('inv-date').value||new Date().toISOString().split('T')[0];
+  const currency = document.getElementById('inv-currency').value;
+  const desc1 = document.getElementById('inv-desc1').value||'Service fee';
+  const amt1 = parseFloat(document.getElementById('inv-amt1').value)||0;
+  const desc2 = document.getElementById('inv-desc2').value||'Grocery cost';
+  const amt2 = parseFloat(document.getElementById('inv-amt2').value)||0;
+  const desc3 = document.getElementById('inv-desc3').value;
+  const amt3 = parseFloat(document.getElementById('inv-amt3').value)||0;
+  const total = amt1+amt2+amt3;
+  const invNum = '48A-'+date.replace(/-/g,'')+'-001';
+
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Invoice ${invNum}</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Georgia',serif;background:#fff;color:#1c1b1a;padding:60px}
+  .head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:60px;padding-bottom:32px;border-bottom:2px solid #c9a84c}
+  .brand{font-size:28px;font-weight:bold;color:#2b241f}.brand small{font-size:11px;display:block;letter-spacing:.2em;text-transform:uppercase;color:#8a8070;margin-top:4px;font-weight:normal}
+  .inv-meta{text-align:right}.inv-meta p{font-size:11px;color:#8a8070;letter-spacing:.05em;line-height:1.8}
+  .inv-meta strong{color:#2b241f}.section{margin-bottom:40px}.section-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#6a7462;margin-bottom:10px}
+  .client-name{font-size:18px;font-style:italic;color:#2b241f}.table{width:100%;border-collapse:collapse;margin-bottom:24px}
+  .table th{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#8a8070;padding:10px 0;border-bottom:1px solid #e8e0d0;text-align:left}
+  .table td{padding:14px 0;border-bottom:1px solid #f0e8e0;font-size:14px;color:#2b241f;font-style:italic}
+  .table td:last-child{text-align:right;font-style:normal}.total-row{display:flex;justify-content:flex-end;padding-top:16px}
+  .total-label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#8a8070;margin-right:24px}
+  .total-val{font-size:22px;color:#2b241f}.footer-note{font-size:11px;color:#8a8070;font-style:italic;margin-top:40px;padding-top:20px;border-top:1px solid #e8e0d0}
+  </style></head><body>
+  <div class="head"><div class="brand">48A<small>hello@48a.studio · 48a.studio</small></div>
+  <div class="inv-meta"><p>Invoice <strong>${invNum}</strong></p><p>Date <strong>${date}</strong></p><p>Due <strong>7 days</strong></p></div></div>
+  <div class="section"><div class="section-label">Billed to</div><div class="client-name">${client}</div></div>
+  <table class="table"><thead><tr><th>Description</th><th style="text-align:right">Amount</th></tr></thead><tbody>
+  ${amt1>0?`<tr><td>${desc1}</td><td>${currency}${amt1.toFixed(2)}</td></tr>`:''}
+  ${amt2>0?`<tr><td>${desc2}</td><td>${currency}${amt2.toFixed(2)}</td></tr>`:''}
+  ${amt3>0&&desc3?`<tr><td>${desc3}</td><td>${currency}${amt3.toFixed(2)}</td></tr>`:''}
+  </tbody></table>
+  <div class="total-row"><span class="total-label">Total</span><span class="total-val">${currency}${total.toFixed(2)}</span></div>
+  <div class="footer-note">Anna Rens · Editor, 48A · hello@48a.studio · Payment due within 7 days of invoice date.</div>
+  </body></html>`;
+
+  const blob = new Blob([html],{type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `Invoice-${invNum}.html`;
+  a.click();
+}
+
+/* ═══════════════════════════════
+   EMAIL FORM HANDLER
+═══════════════════════════════ */
+function handleEmailSubmit(inputId, successId){
+  const input = document.getElementById(inputId);
+  const success = document.getElementById(successId);
+  const btn = input.nextElementSibling;
+  const email = input.value.trim();
+  if(!email || !email.includes('@')){
+    input.style.borderColor='var(--rust)';
+    setTimeout(()=>input.style.borderColor='',1500);
+    return;
+  }
+  const originalText = btn.textContent;
+  btn.textContent = 'Joining...';
+  btn.disabled = true;
+  fetch('https://app.convertkit.com/forms/e58cc7f5c6/subscriptions',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({email_address:email})
+  })
+  .then(()=>{
+    input.value='';
+    input.disabled=true;
+    input.placeholder="You're on the list.";
+    btn.textContent='Done ✓';
+    success.classList.add('visible');
+  })
+  .catch(()=>{
+    input.value='';
+    input.disabled=true;
+    input.placeholder="You're on the list.";
+    btn.textContent='Done ✓';
+    success.classList.add('visible');
+  });
+}
+
+// Close mobile menu on outside click
+document.addEventListener('click',e=>{
+  const menu = document.getElementById('mobileMenu');
+  const toggle = document.querySelector('.nav-mobile-toggle');
+  if(menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)){
+    menu.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
