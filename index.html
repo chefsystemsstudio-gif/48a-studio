@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>48A · Field Manuals for Private Kitchen Professionals</title>
+<meta name="description" content="The brief nobody gave you. Field manuals for private kitchen professionals — written by someone who has been inside the household, not outside it.">
+<meta name="author" content="Anna Rens">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://48a.studio">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://48a.studio">
+<meta property="og:title" content="48A · Field Manuals for Private Kitchen Professionals">
+<meta property="og:description" content="The brief nobody gave you. Operational intelligence for the private household chef.">
+<meta property="og:site_name" content="48A">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="48A · Field Manuals for Private Kitchen Professionals">
+<meta name="twitter:description" content="The brief nobody gave you. Operational intelligence for the private household chef.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--parchment:#efe7dc;--parchment-deep:#e8dfd3;--parchment-mid:#e0d7ca;--dark:#2b241f;--dark-mid:#3d332c;--text:#1c1b1a;--muted:#8a8070;--brass:#c9a84c;--brass-dim:#a8883c;--sage:#6a7462;--rust:#b8896c;--border:rgba(28,27,26,.09);--border-light:rgba(28,27,26,.05);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--parchment);color:var(--text);font-family:'DM Mono',monospace;font-size:13px;line-height:1.6;overflow-x:hidden;}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+.eyebrow{font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:12px;}
+.rule{width:32px;height:1px;background:var(--brass);display:block;margin-bottom:24px}
+.container{max-width:1160px;margin:0 auto;padding:0 48px}
+@media(max-width:768px){.container{padding:0 24px}}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(239,231,220,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 48px;display:flex;justify-content:space-between;align-items:center;height:60px;transition:box-shadow .3s;}
+.nav.scrolled{box-shadow:0 1px 24px rgba(28,27,26,.08)}
+.nav-mark{display:flex;align-items:baseline;cursor:pointer}
+.nav-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--dark);letter-spacing:-.02em;line-height:1;}
+.nav-A{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--brass);margin-left:1px;}
+.nav-tabs{display:flex;gap:0;height:60px}
+.nav-tab{height:100%;display:flex;align-items:center;padding:0 20px;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(28,27,26,.4);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;}
+.nav-tab:hover{color:var(--dark)}
+.nav-tab.active{color:var(--dark);border-bottom-color:var(--brass)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-join{font-size:8px;letter-spacing:.18em;text-transform:uppercase;background:var(--dark);color:var(--parchment);padding:9px 18px;transition:background .2s;cursor:pointer;}
+.nav-join:hover{background:var(--dark-mid)}
+.nav-mobile-toggle{display:none;flex-direction:column;gap:5px;padding:4px}
+.nav-mobile-toggle span{width:22px;height:1.5px;background:var(--dark);display:block;transition:all .3s}
+
+/* ANNOUNCEMENT */
+.announcement{background:var(--dark);padding:10px 0;text-align:center;position:fixed;top:60px;left:0;right:0;z-index:99;border-bottom:1px solid rgba(201,168,76,.15);}
+.announcement-text{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,231,220,.6);}
+.announcement-text strong{color:var(--brass)}
+.announcement-close{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:rgba(239,231,220,.3);cursor:pointer;font-size:18px;line-height:1;transition:color .2s;}
+.announcement-close:hover{color:rgba(239,231,220,.7)}
+
+/* PAGES */
+.page{display:none}
+.page.active{display:block}
+
+/* BUTTONS */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:var(--parchment);font-size:8px;letter-spacing:.2em;text-transform:uppercase;padding:13px 24px;transition:all .2s;cursor:pointer;}
+.btn-primary:hover{background:var(--dark-mid)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--muted);font-size:8px;letter-spacing:.2em;text-transform:uppercase;padding:13px 24px;transition:all .2s;cursor:pointer;}
+.btn-secondary:hover{border-color:var(--dark);color:var(--dark)}
+
+/* HERO */
+.hero{padding:80px 0;border-bottom:1px solid var(--border);}
+.hero-inner{display:grid;grid-template-columns:1fr 400px;gap:80px;align-items:center;}
+.hero-kicker{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--sage);margin-bottom:28px;display:flex;align-items:center;gap:12px;}
+.hero-kicker::before{content:'';width:24px;height:1px;background:var(--sage);opacity:.6}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,6vw,76px);font-weight:300;font-style:italic;color:var(--dark);line-height:1.05;margin-bottom:24px;}
+.hero-sub{font-size:11px;letter-spacing:.1em;color:var(--muted);max-width:420px;line-height:1.9;margin-bottom:40px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-visual{background:var(--parchment-deep);border-bottom:2px solid var(--brass);padding:48px 40px;position:relative;overflow:hidden;}
+.hero-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--brass),transparent);opacity:.4;}
+.hero-visual-label{font-size:7px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage);margin-bottom:28px;display:flex;align-items:center;gap:10px;}
+.hero-visual-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.hero-visual-quote{font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;font-weight:300;color:var(--dark);line-height:1.5;margin-bottom:32px;}
+.hero-visual-meta{display:flex;justify-content:space-between;align-items:flex-end;padding-top:24px;border-top:1px solid var(--border);}
+.hero-visual-attr{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);line-height:1.7}
+.hero-visual-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:rgba(201,168,76,.08);line-height:1;letter-spacing:-.04em;}
+.hero-stats{display:flex;gap:0;margin-top:40px;border-top:1px solid var(--border);padding-top:32px;}
+.hero-stat{flex:1;padding-right:24px;border-right:1px solid var(--border);margin-right:24px;}
+.hero-stat:last-child{border-right:none;margin-right:0}
+.hero-stat-n{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--brass);line-height:1;display:block;}
+.hero-stat-l{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-top:4px;}
+
+/* TRUST STRIP */
+.trust-strip{background:var(--parchment-deep);border-bottom:1px solid var(--border);padding:16px 0;}
+.trust-inner{display:flex;align-items:center;gap:40px;overflow-x:auto;white-space:nowrap;padding:0 48px;}
+.trust-inner::-webkit-scrollbar{display:none}
+.trust-item{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.trust-dot{width:5px;height:5px;background:var(--brass);border-radius:50%;flex-shrink:0;}
+.trust-text{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+.trust-div{width:1px;height:14px;background:var(--border);flex-shrink:0;}
+
+/* SERIES STRIP */
+.series-strip{background:var(--dark);padding:0;overflow:hidden;}
+.series-strip-inner{display:flex;align-items:center;}
+.series-strip-label{font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:rgba(201,168,76,.6);white-space:nowrap;padding:14px 32px;border-right:1px solid rgba(255,255,255,.06);flex-shrink:0;}
+.series-items{display:flex;flex:1;overflow-x:auto;}
+.series-items::-webkit-scrollbar{display:none}
+.series-item{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:rgba(239,231,220,.2);padding:14px 28px;border-right:1px solid rgba(255,255,255,.04);white-space:nowrap;flex-shrink:0;transition:color .2s;cursor:default;}
+.series-item.live{color:rgba(201,168,76,.75);cursor:pointer;}
+.series-item.live:hover{color:var(--brass)}
+.series-live-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--brass);margin-left:6px;animation:pulse 2.5s infinite;vertical-align:middle;margin-bottom:1px;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* MANUALS */
+.manuals-section{padding:88px 0;border-bottom:1px solid var(--border);}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;}
+.section-view-all{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px;transition:color .2s;cursor:pointer;}
+.section-view-all:hover{color:var(--dark)}
+.manuals-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.manual-card{background:var(--parchment-deep);padding:44px;border-bottom:2px solid var(--brass);transition:transform .2s,box-shadow .2s;}
+.manual-card:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(28,27,26,.1);}
+.manual-id{font-size:7px;letter-spacing:.25em;text-transform:uppercase;color:var(--sage);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.manual-id::after{content:'';flex:1;height:1px;background:var(--border);max-width:80px}
+.manual-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-style:italic;font-weight:300;color:var(--dark);margin-bottom:8px;line-height:1.2;}
+.manual-sub{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+.manual-desc{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--muted);line-height:1.85;margin-bottom:28px;}
+.chapter-list{margin-bottom:32px;border-top:1px solid var(--border);}
+.chapter-item{display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px solid var(--border-light);}
+.chapter-num{font-size:8px;letter-spacing:.1em;color:rgba(201,168,76,.5);flex-shrink:0;width:20px;}
+.chapter-name{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:rgba(28,27,26,.45);transition:color .15s;}
+.chapter-item:hover .chapter-name{color:var(--dark)}
+.chapter-name.visible{color:rgba(28,27,26,.75)}
+.chapter-lock{margin-left:auto;flex-shrink:0;font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:rgba(28,27,26,.2);}
+.manual-footer{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid var(--border);}
+.manual-price{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--dark);line-height:1;}
+.manual-price small{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--muted);display:block;margin-top:4px;}
+.btn-buy{background:var(--dark);color:var(--parchment);font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:12px 22px;transition:all .2s;display:flex;align-items:center;gap:8px;}
+.btn-buy:hover{background:var(--dark-mid)}
+.coming-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:24px;}
+.coming-card{background:var(--parchment);padding:32px 36px;opacity:.6;}
+.coming-num{font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.coming-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;font-weight:300;color:var(--dark);margin-bottom:6px;}
+.coming-badge{font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:5px;margin-top:10px;}
+
+/* MONEY */
+.money-section{padding:72px 0;border-bottom:1px solid var(--border);background:var(--parchment-mid);}
+.money-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.money-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);padding:6px 14px;font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:24px;}
+.money-h{font-family:'Cormorant Garamond',serif;font-size:36px;font-style:italic;font-weight:300;color:var(--dark);line-height:1.2;margin-bottom:16px;}
+.money-desc{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--muted);line-height:1.85;margin-bottom:28px;}
+.money-pillar{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);}
+.money-pillar:first-child{border-top:1px solid var(--border)}
+.money-pillar-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:rgba(201,168,76,.3);line-height:1;flex-shrink:0;width:28px;}
+.money-pillar-title{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--dark);margin-bottom:4px}
+.money-pillar-desc{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--muted);font-style:italic;line-height:1.6}
+
+/* ABOUT */
+.about-section{padding:88px 0;border-bottom:1px solid var(--border);background:var(--parchment-deep);}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;}
+.about-body{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--muted);line-height:1.85;margin-bottom:20px;}
+.about-portrait{background:var(--parchment-mid);padding:44px;border-bottom:2px solid var(--sage);}
+.about-portrait-inner{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;font-weight:300;color:var(--dark);line-height:1.55;margin-bottom:28px;}
+.about-portrait-sig{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:12px;}
+.about-portrait-sig::before{content:'';width:20px;height:1px;background:var(--brass)}
+.about-credentials{margin-top:36px;padding-top:36px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:14px;}
+.about-credential{display:flex;align-items:baseline;gap:12px;}
+.about-credential-num{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--brass);flex-shrink:0;width:40px;}
+.about-credential-text{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.6;}
+
+/* TESTIMONIALS */
+.testimonials-section{padding:80px 0;border-bottom:1px solid var(--border);}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.testimonial-card{background:var(--parchment-deep);padding:44px;}
+.testimonial-rule{width:24px;height:1px;background:var(--brass);display:block;margin-bottom:24px}
+.testimonial-quote{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;font-weight:300;color:var(--dark);line-height:1.75;margin-bottom:28px;}
+.testimonial-attr{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;gap:3px;}
+.testimonial-name{color:var(--dark)}
+
+/* FAQ */
+.faq-section{padding:80px 0;border-bottom:1px solid var(--border);}
+.faq-inner{display:grid;grid-template-columns:280px 1fr;gap:88px;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--dark);line-height:1.3;gap:16px;transition:color .2s;}
+.faq-q:hover{color:var(--brass)}
+.faq-toggle{font-size:20px;font-style:normal;color:var(--brass);flex-shrink:0;transition:transform .3s;line-height:1;}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-item.open .faq-a{max-height:240px}
+.faq-a-inner{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--muted);line-height:1.8;padding-bottom:20px;}
+
+/* EMAIL */
+.email-section{background:var(--dark);padding:88px 0;}
+.email-inner{text-align:center;max-width:520px;margin:0 auto}
+.email-eyebrow{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,168,76,.6);margin-bottom:20px;display:block}
+.email-h{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,4vw,56px);font-weight:300;font-style:italic;color:var(--parchment);margin-bottom:14px;}
+.email-sub{font-size:10px;letter-spacing:.1em;color:rgba(239,231,220,.3);line-height:1.9;margin-bottom:36px}
+.email-form{display:flex;max-width:400px;margin:0 auto 14px;gap:0}
+.email-input{flex:1;background:rgba(239,231,220,.05);border:1px solid rgba(239,231,220,.1);border-right:none;color:var(--parchment);font-family:'DM Mono',monospace;font-size:12px;padding:13px 18px;outline:none;transition:border-color .2s;}
+.email-input:focus{border-color:rgba(201,168,76,.4)}
+.email-input::placeholder{color:rgba(239,231,220,.2)}
+.email-btn{background:var(--brass);color:var(--dark);border:none;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;padding:13px 20px;white-space:nowrap;font-weight:500;transition:background .2s;cursor:pointer;}
+.email-btn:hover{background:var(--brass-dim)}
+.email-note{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:rgba(239,231,220,.15)}
+.email-promises{display:flex;justify-content:center;gap:32px;margin-top:28px;flex-wrap:wrap}
+.email-promise{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,231,220,.2);display:flex;align-items:center;gap:6px;}
+.email-promise::before{content:'—';color:rgba(201,168,76,.4)}
+
+/* TOOLS PAGE */
+.tools-page{padding:100px 0 80px}
+.tools-hero{text-align:center;padding-bottom:64px;border-bottom:1px solid var(--border);margin-bottom:64px;}
+.tools-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,64px);font-style:italic;font-weight:300;color:var(--dark);margin-bottom:16px;}
+.tools-sub{font-size:11px;letter-spacing:.1em;color:var(--muted);max-width:440px;margin:0 auto;line-height:1.9;}
+.tool-card{background:var(--parchment-deep);border-bottom:2px solid var(--brass);padding:52px;margin-bottom:24px;}
+.tool-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;gap:32px;}
+.tool-badge{font-size:7px;letter-spacing:.22em;text-transform:uppercase;background:rgba(106,116,98,.1);color:var(--sage);padding:5px 12px;display:inline-block;margin-bottom:12px;}
+.tool-h{font-family:'Cormorant Garamond',serif;font-size:30px;font-style:italic;font-weight:300;color:var(--dark);}
+.tool-desc{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--muted);line-height:1.8;max-width:360px;}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;}
+.calc-field{display:flex;flex-direction:column;gap:8px}
+.calc-label{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.calc-input{background:var(--parchment);border:1px solid var(--border);padding:13px 16px;font-family:'DM Mono',monospace;font-size:14px;color:var(--dark);outline:none;transition:border-color .2s;width:100%;}
+.calc-input:focus{border-color:var(--brass)}
+.calc-select{background:var(--parchment);border:1px solid var(--border);padding:13px 16px;font-family:'DM Mono',monospace;font-size:13px;color:var(--dark);outline:none;cursor:pointer;width:100%;appearance:none;-webkit-appearance:none;transition:border-color .2s;}
+.calc-select:focus{border-color:var(--brass)}
+.calc-btn{background:var(--dark);color:var(--parchment);font-size:8px;letter-spacing:.2em;text-transform:uppercase;padding:14px 28px;transition:all .2s;cursor:pointer;display:inline-flex;align-items:center;gap:8px;border:none;font-family:'DM Mono',monospace;}
+.calc-btn:hover{background:var(--dark-mid)}
+.calc-result{display:none;background:var(--parchment);border:1px solid var(--border);padding:32px;margin-top:24px;}
+.calc-result.visible{display:block}
+.calc-result-label{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:8px}
+.calc-result-value{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--dark);line-height:1;margin-bottom:4px;}
+.calc-result-sub{font-size:10px;letter-spacing:.1em;color:var(--muted);margin-bottom:16px}
+.calc-result-note{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:var(--muted);line-height:1.7;padding-top:16px;border-top:1px solid var(--border);}
+.invoice-card{background:var(--parchment-deep);border-bottom:2px solid var(--sage);padding:52px;margin-bottom:24px;}
+.invoice-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px}
+.invoice-items{margin-bottom:24px}
+.invoice-item-row{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:10px;}
+.invoice-total-row{display:flex;justify-content:flex-end;gap:24px;padding-top:16px;border-top:1px solid var(--border);}
+.invoice-total-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.invoice-total-val{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--dark);}
+.agency-card{background:var(--parchment-deep);border-bottom:2px solid var(--rust);padding:52px;}
+.agency-result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:24px;}
+.agency-result-cell{background:var(--parchment);padding:24px 28px;}
+.agency-result-label{font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.agency-result-val{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--dark);}
+.agency-result-val.highlight{color:var(--brass)}
+
+/* APP PAGE */
+.app-page{padding:100px 0 80px}
+.app-hero{display:grid;grid-template-columns:1fr 360px;gap:80px;align-items:center;padding-bottom:80px;border-bottom:1px solid var(--border);margin-bottom:80px;}
+.app-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.15);padding:6px 14px;font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:24px;}
+.app-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--brass);animation:pulse 2s infinite}
+.app-h{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,64px);font-style:italic;font-weight:300;color:var(--dark);line-height:1.1;margin-bottom:20px;}
+.app-sub{font-size:11px;letter-spacing:.1em;color:var(--muted);line-height:1.9;max-width:420px;margin-bottom:36px}
+.waitlist-form{display:flex;gap:0;max-width:380px;margin-bottom:14px}
+.waitlist-input{flex:1;background:var(--parchment-deep);border:1px solid var(--border);border-right:none;padding:13px 16px;font-family:'DM Mono',monospace;font-size:12px;color:var(--dark);outline:none;transition:border-color .2s;}
+.waitlist-input:focus{border-color:var(--brass)}
+.waitlist-input::placeholder{color:var(--muted)}
+.waitlist-btn{background:var(--dark);color:var(--parchment);font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:13px 20px;white-space:nowrap;transition:background .2s;cursor:pointer;border:none;font-family:'DM Mono',monospace;}
+.waitlist-btn:hover{background:var(--dark-mid)}
+.waitlist-note{font-size:8px;letter-spacing:.12em;color:var(--muted)}
+.phone-mockup{width:280px;height:520px;background:var(--dark);border-radius:32px;border:1.5px solid rgba(201,168,76,.2);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(28,27,26,.2);margin:0 auto;}
+.phone-status{height:32px;background:rgba(0,0,0,.3);display:flex;align-items:center;justify-content:space-between;padding:0 20px;flex-shrink:0;}
+.phone-time{font-size:9px;color:rgba(239,231,220,.6);letter-spacing:.05em}
+.phone-brand{display:flex;align-items:baseline;}
+.phone-brand-num{font-family:'Playfair Display',serif;font-size:14px;font-weight:900;color:#f0e8d4;letter-spacing:-.02em}
+.phone-brand-A{font-family:'Playfair Display',serif;font-size:9px;font-weight:700;color:var(--brass);margin-left:1px}
+.phone-signal{display:flex;align-items:center;gap:3px}
+.phone-signal span{width:3px;background:rgba(239,231,220,.4);border-radius:1px}
+.phone-signal span:nth-child(1){height:4px}.phone-signal span:nth-child(2){height:6px}.phone-signal span:nth-child(3){height:8px}.phone-signal span:nth-child(4){height:10px}
+.phone-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0;}
+.phone-greeting{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:rgba(240,232,212,.7);}
+.phone-date{font-size:8px;letter-spacing:.08em;color:rgba(255,255,255,.2)}
+.phone-content{flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.phone-section-label{font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,168,76,.5);margin-bottom:2px;margin-top:4px}
+.phone-item{padding:10px 12px;border:1px solid rgba(255,255,255,.06);border-radius:4px;display:grid;grid-template-columns:36px 1fr;gap:8px;align-items:start;}
+.phone-item.active{border-color:rgba(201,168,76,.2);background:rgba(201,168,76,.04)}
+.phone-item-time{font-size:8px;color:rgba(201,168,76,.7);letter-spacing:.04em;padding-top:1px}
+.phone-item-info span{font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(240,232,212,.65);display:block;line-height:1.3;}
+.phone-item-info small{font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.phone-nav{height:48px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-around;flex-shrink:0;padding:0 8px;}
+.phone-nav-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:6px;}
+.phone-nav-icon.active{background:rgba(201,168,76,.1)}
+.phone-nav-dot{width:18px;height:1.5px;background:rgba(255,255,255,.2);border-radius:1px}
+.phone-nav-icon.active .phone-nav-dot{background:rgba(201,168,76,.8)}
+.app-features{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.app-feature{background:var(--parchment);padding:36px;}
+.app-feature-icon{width:36px;height:36px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.app-feature-icon-inner{width:14px;height:1.5px;background:var(--brass);display:block}
+.app-feature-title{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark);margin-bottom:8px}
+.app-feature-desc{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--muted);line-height:1.75;}
+
+/* JOURNAL PAGE */
+.journal-page{padding:100px 0 80px}
+.journal-hero{padding-bottom:64px;border-bottom:1px solid var(--border);margin-bottom:64px;}
+.journal-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;}
+.journal-h{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,5vw,68px);font-style:italic;font-weight:300;color:var(--dark);line-height:1.05;}
+.journal-desc{font-size:11px;letter-spacing:.1em;color:var(--muted);line-height:1.9}
+.journal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:24px;}
+.journal-featured{grid-column:1/-1;background:var(--parchment-deep);padding:52px;display:grid;grid-template-columns:1fr 1fr;gap:48px;border-bottom:1px solid var(--border);}
+.journal-card{background:var(--parchment-deep);padding:40px;transition:background .2s;cursor:pointer;}
+.journal-card:hover{background:var(--parchment-mid)}
+.journal-tag{font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.journal-tag::before{content:'';width:16px;height:1px;background:var(--sage);opacity:.5}
+.journal-card-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;font-weight:300;color:var(--dark);line-height:1.3;margin-bottom:12px;}
+.journal-card-title.large{font-size:32px}
+.journal-card-excerpt{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px;}
+.journal-card-meta{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:flex;gap:16px;}
+.journal-card-meta span+span::before{content:'·';margin-right:16px}
+.journal-read-more{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark);display:flex;align-items:center;gap:6px;margin-top:20px;transition:gap .2s;}
+.journal-card:hover .journal-read-more{gap:10px}
+.field-notes{background:var(--parchment-mid);padding:56px;border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.field-notes-h{font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;font-weight:300;color:var(--dark);line-height:1.2;margin-bottom:10px;}
+.field-notes-sub{font-size:10px;letter-spacing:.1em;color:var(--muted);line-height:1.8}
+.field-notes-form{display:flex;gap:0}
+.field-notes-input{flex:1;background:var(--parchment);border:1px solid var(--border);border-right:none;padding:13px 16px;font-family:'DM Mono',monospace;font-size:12px;color:var(--dark);outline:none;transition:border-color .2s;}
+.field-notes-input:focus{border-color:var(--brass)}
+.field-notes-input::placeholder{color:var(--muted)}
+.field-notes-btn{background:var(--dark);color:var(--parchment);font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:13px 20px;white-space:nowrap;transition:background .2s;cursor:pointer;border:none;font-family:'DM Mono',monospace;}
+.field-notes-btn:hover{background:var(--dark-mid)}
+
+/* FOOTER */
+.footer{background:var(--parchment);padding:60px 0 0;border-top:1px solid var(--border);}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-brand-mark{display:flex;align-items:baseline;margin-bottom:10px}
+.footer-brand-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--dark);letter-spacing:-.02em}
+.footer-brand-A{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--brass);margin-left:1px}
+.footer-desc{font-size:11px;color:var(--muted);line-height:1.8;max-width:200px;margin-bottom:16px}
+.footer-social{display:flex;gap:10px}
+.footer-social-link{width:28px;height:28px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:8px;color:var(--muted);transition:all .2s;}
+.footer-social-link:hover{border-color:var(--dark);color:var(--dark)}
+.footer-col-label{font-size:7px;letter-spacing:.25em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;display:block}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-link{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer;}
+.footer-link:hover{color:var(--dark)}
+.footer-bottom{border-top:1px solid var(--border);padding:18px 0;display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:8px;letter-spacing:.12em;color:rgba(28,27,26,.25)}
+
+/* SUCCESS */
+.success-msg{display:none;font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--sage);margin-top:10px;}
+.success-msg.visible{display:block}
+
+/* MOBILE MENU */
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(239,231,220,.98);backdrop-filter:blur(12px);z-index:99;padding:24px;border-bottom:1px solid var(--border);flex-direction:column;gap:0;}
+.mobile-menu.open{display:flex}
+.mobile-tab{padding:14px 0;border-bottom:1px solid var(--border-light);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:color .15s;}
+.mobile-tab:hover,.mobile-tab.active{color:var(--dark)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .nav-tabs{display:none}.nav-join{display:none}.nav-mobile-toggle{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .manuals-grid{grid-template-columns:1fr}
+  .coming-grid{grid-template-columns:1fr}
+  .money-inner{grid-template-columns:1fr;gap:40px}
+  .about-inner{grid-template-columns:1fr;gap:48px}
+  .testimonials-grid{grid-template-columns:1fr}
+  .faq-inner{grid-template-columns:1fr;gap:40px}
+  .app-hero{grid-template-columns:1fr;gap:48px}
+  .app-features{grid-template-columns:1fr}
+  .journal-grid{grid-template-columns:1fr}
+  .journal-featured{grid-template-columns:1fr;gap:24px}
+  .journal-intro{grid-template-columns:1fr;gap:24px}
+  .field-notes{grid-template-columns:1fr;gap:28px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .calc-grid{grid-template-columns:1fr}
+  .invoice-grid{grid-template-columns:1fr}
+  .agency-result-grid{grid-template-columns:1fr}
+  .tools-page,.app-page,.journal-page{padding:88px 0 60px}
+  .trust-inner{padding:0 24px}
+}
+@media(max-width:600px){
+  .container{padding:0 20px}.nav{padding:0 20px}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column;gap:20px}
+  .hero-stat{border-right:none;border-bottom:1px solid var(--border);padding-bottom:16px;margin-right:0}
+  .hero-stat:last-child{border-bottom:none;padding-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement" id="announcementBar">
+  <p class="announcement-text"><strong>Founding price $29</strong> · The First Kitchen + The Sole Charge Kitchen — available now</p>
+  <span class="announcement-close" onclick="document.getElementById('announcementBar').style.display='none'">&times;</span>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+  <div class="nav-mark" onclick="showPage('series')">
+    <span class="nav-num">48</span><span class="nav-A">A</span>
+  </div>
+  <div class="nav-tabs">
+    <div class="nav-tab active" data-page="series" onclick="showPage('series')">Series 01</div>
+    <div class="nav-tab" data-page="tools" onclick="showPage('tools')">Tools</div>
+    <div class="nav-tab" data-page="app" onclick="showPage('app')">The App</div>
+    <div class="nav-tab" data-page="journal" onclick="showPage('journal')">Journal</div>
+  </div>
+  <div class="nav-right">
+    <a href="https://instagram.com/48a.studio" target="_blank" rel="noopener" style="font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .2s;padding:0 4px;" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">@48a.studio</a>
+    <div class="nav-join" onclick="scrollToEmail()">Join the List</div>
+    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-tab active" data-page="series" onclick="showPage('series');toggleMobileMenu()">Series 01</div>
+  <div class="mobile-tab" data-page="tools" onclick="showPage('tools');toggleMobileMenu()">Tools</div>
+  <div class="mobile-tab" data-page="app" onclick="showPage('app');toggleMobileMenu()">The App</div>
+  <div class="mobile-tab" data-page="journal" onclick="showPage('journal');toggleMobileMenu()">Journal</div>
+  <div style="padding-top:16px"><div class="btn-primary" onclick="scrollToEmail();toggleMobileMenu()" style="justify-content:center">Join the List</div></div>
+</div>
+
+
+<!-- ═══ PAGE: SERIES 01 ═══ -->
+<div class="page active" id="page-series" style="padding-top:108px">
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-kicker reveal">Series 01 · Private Kitchen</div>
+          <h1 class="hero-h1 reveal reveal-delay-1">For the private<br>household.</h1>
+          <p class="hero-sub reveal reveal-delay-2">The brief nobody gave you. Field manuals for the private kitchen professional — written from inside the household, not outside it.</p>
+          <div class="hero-actions reveal reveal-delay-3">
+            <div class="btn-primary" onclick="document.getElementById('manuals-anchor').scrollIntoView({behavior:'smooth'})">Explore Manuals →</div>
+            <div class="btn-secondary" onclick="scrollToEmail()">Join the List</div>
+          </div>
+          <div class="hero-stats reveal">
+            <div class="hero-stat"><span class="hero-stat-n">2</span><span class="hero-stat-l">Manuals Available</span></div>
+            <div class="hero-stat"><span class="hero-stat-n">5</span><span class="hero-stat-l">In the Series</span></div>
+            <div class="hero-stat"><span class="hero-stat-n">$29</span><span class="hero-stat-l">Per Manual</span></div>
+          </div>
+        </div>
+        <div class="hero-visual reveal reveal-delay-1">
+          <div class="hero-visual-label">From the manual</div>
+          <div class="hero-visual-quote">"The first kitchen is not about cooking. It is about reading a household — its rhythms, its hierarchies, its unspoken rules — before you have earned the right to know them."</div>
+          <div class="hero-visual-meta">
+            <div class="hero-visual-attr">Field Manual No.1<br>Chapter 03</div>
+            <div class="hero-visual-num">01</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <div class="trust-strip">
+    <div class="trust-inner">
+      <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Instant PDF Download</span></div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Written from inside the household</span></div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">No agency. No recruiters.</span></div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">One-time purchase · No subscription</span></div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Secure checkout · Lemon Squeezy</span></div>
+    </div>
+  </div>
+
+  <!-- Series Strip -->
+  <div class="series-strip">
+    <div class="series-strip-inner">
+      <div class="series-strip-label">Series 01 · Private Kitchen</div>
+      <div class="series-items">
+        <div class="series-item live" onclick="document.getElementById('manuals-anchor').scrollIntoView({behavior:'smooth'})">No.1 · The First Kitchen<span class="series-live-dot"></span></div>
+        <div class="series-item">No.2 · The Freelance Season</div>
+        <div class="series-item">No.3 · The Permanent Transition</div>
+        <div class="series-item live" onclick="document.getElementById('manuals-anchor').scrollIntoView({behavior:'smooth'})">No.4 · The Sole Charge Kitchen<span class="series-live-dot"></span></div>
+        <div class="series-item">No.5 · The International Kitchen</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manuals -->
+  <section class="manuals-section" id="manuals-anchor">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <span class="eyebrow">Available Now</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;font-style:italic;color:var(--dark)">The Field Manuals</h2>
+        </div>
+        <div class="section-view-all" onclick="scrollToEmail()">Join list for founding pricing →</div>
+      </div>
+      <div class="manuals-grid">
+        <div class="manual-card reveal">
+          <div class="manual-id">48A · Field Manual · No. 01</div>
+          <h3 class="manual-title">The First Kitchen</h3>
+          <div class="manual-sub">Series 01 · Private Kitchen</div>
+          <p class="manual-desc">For the chef transitioning from restaurant, hotel or commercial kitchen into private household service. The real picture — before the first door.</p>
+          <div class="chapter-list">
+            <div class="chapter-item"><span class="chapter-num">01</span><span class="chapter-name visible">The Accidental Entry</span></div>
+            <div class="chapter-item"><span class="chapter-num">02</span><span class="chapter-name visible">Finding Work — Agency vs. Independent</span></div>
+            <div class="chapter-item"><span class="chapter-num">03</span><span class="chapter-name visible">The First Day at a House You've Never Been To</span></div>
+            <div class="chapter-item"><span class="chapter-num">04</span><span class="chapter-name">The Professional Relationship</span><span class="chapter-lock">Preview</span></div>
+            <div class="chapter-item"><span class="chapter-num">05</span><span class="chapter-name">Pricing Yourself — The Numbers</span><span class="chapter-lock">Preview</span></div>
+            <div class="chapter-item"><span class="chapter-num">06</span><span class="chapter-name">Invoicing — Service Fees & Getting Paid</span><span class="chapter-lock">—</span></div>
+            <div class="chapter-item"><span class="chapter-num">07</span><span class="chapter-name">What You Wish You Had Known</span><span class="chapter-lock">—</span></div>
+          </div>
+          <div class="manual-footer">
+            <div class="manual-price">$29<small>One-time purchase · Instant download</small></div>
+            <a href="https://chefsystemsstudio.lemonsqueezy.com/checkout/buy/59106a15-71f6-416b-a86c-b44acc791c51" class="btn-buy" target="_blank">Buy Now →</a>
+          </div>
+        </div>
+        <div class="manual-card reveal reveal-delay-1">
+          <div class="manual-id">48A · Field Manual · No. 04</div>
+          <h3 class="manual-title">The Sole Charge Kitchen</h3>
+          <div class="manual-sub">Series 01 · Private Kitchen</div>
+          <p class="manual-desc">For the permanent chef who has absorbed full household management responsibility. No support structure above you. Responsible for everything.</p>
+          <div class="chapter-list">
+            <div class="chapter-item"><span class="chapter-num">01</span><span class="chapter-name visible">The Weight of Sole Charge</span></div>
+            <div class="chapter-item"><span class="chapter-num">02</span><span class="chapter-name visible">Managing Up — The Principal Relationship</span></div>
+            <div class="chapter-item"><span class="chapter-num">03</span><span class="chapter-name visible">The Interrupted Kitchen</span></div>
+            <div class="chapter-item"><span class="chapter-num">04</span><span class="chapter-name">Competing Preferences</span><span class="chapter-lock">Preview</span></div>
+            <div class="chapter-item"><span class="chapter-num">05</span><span class="chapter-name">Sourcing Under Pressure</span><span class="chapter-lock">Preview</span></div>
+            <div class="chapter-item"><span class="chapter-num">06</span><span class="chapter-name">Managing Without a Manager</span><span class="chapter-lock">—</span></div>
+            <div class="chapter-item"><span class="chapter-num">07</span><span class="chapter-name">Sustainable Systems</span><span class="chapter-lock">—</span></div>
+          </div>
+          <div class="manual-footer">
+            <div class="manual-price">$29<small>One-time purchase · Instant download</small></div>
+            <a href="https://chefsystemsstudio.lemonsqueezy.com/checkout/buy/7148dc7d-35c3-41b4-989c-a7f26346372f" class="btn-buy" target="_blank">Buy Now →</a>
+          </div>
+        </div>
+      </div>
+      <!-- Bundle Offer -->
+      <div class="reveal" style="margin-top:32px;background:var(--dark);padding:52px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;border-bottom:2px solid var(--brass);">
+        <div>
+          <div style="font-size:7px;letter-spacing:.28em;text-transform:uppercase;color:rgba(201,168,76,.6);margin-bottom:14px;display:flex;align-items:center;gap:10px;">
+            <span style="width:20px;height:1px;background:rgba(201,168,76,.4);display:inline-block"></span>Best Value · Complete Series
+          </div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;font-weight:300;color:var(--parchment);line-height:1.2;margin-bottom:12px;">The Complete Series Bundle</h3>
+          <p style="font-size:10px;letter-spacing:.08em;color:rgba(239,231,220,.4);line-height:1.9;max-width:480px;margin-bottom:24px;">All five field manuals. No.1 and No.4 available immediately. No.2, No.3, and No.5 delivered automatically at launch.</p>
+          <div style="display:flex;gap:24px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:8px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(239,231,220,.3);"><span style="width:4px;height:4px;background:var(--brass);border-radius:50%;display:inline-block;flex-shrink:0"></span>No.1 · The First Kitchen</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(239,231,220,.3);"><span style="width:4px;height:4px;background:rgba(201,168,76,.3);border-radius:50%;display:inline-block;flex-shrink:0"></span>No.2 · The Freelance Season</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(239,231,220,.3);"><span style="width:4px;height:4px;background:rgba(201,168,76,.3);border-radius:50%;display:inline-block;flex-shrink:0"></span>No.3 · The Permanent Transition</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(239,231,220,.3);"><span style="width:4px;height:4px;background:var(--brass);border-radius:50%;display:inline-block;flex-shrink:0"></span>No.4 · The Sole Charge Kitchen</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(239,231,220,.3);"><span style="width:4px;height:4px;background:rgba(201,168,76,.3);border-radius:50%;display:inline-block;flex-shrink:0"></span>No.5 · The International Kitchen</div>
+          </div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div style="font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:rgba(239,231,220,.25);margin-bottom:4px;text-decoration:line-through;">$145 separately</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--brass);line-height:1;">$99</div>
+          <div style="font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,231,220,.25);margin-bottom:20px;">Save $46 · All five manuals</div>
+          <div onclick="scrollToEmail()" style="display:inline-flex;align-items:center;gap:8px;background:var(--brass);color:var(--dark);font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:13px 24px;cursor:pointer;font-weight:500;transition:background .2s;" onmouseover="this.style.background='#a8883c'" onmouseout="this.style.background='var(--brass)'">Join List to Pre-order →</div>
+          <div style="font-size:8px;letter-spacing:.1em;color:rgba(239,231,220,.2);margin-top:10px;">Founding list · Limited</div>
+        </div>
+      </div>
+
+      <div class="coming-grid reveal">
+        <div class="coming-card"><div class="coming-num">48A · Field Manual · No. 02</div><div class="coming-title">The Freelance Season</div><p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--muted);font-style:italic;line-height:1.7">Multiple clients, the feast-or-famine cycle, building independence from an agency.</p><div class="coming-badge">In Progress</div></div>
+        <div class="coming-card"><div class="coming-num">48A · Field Manual · No. 03</div><div class="coming-title">The Permanent Transition</div><p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--muted);font-style:italic;line-height:1.7">The contract conversation, the boredom nobody warns you about, the thick skin required.</p><div class="coming-badge">In Progress</div></div>
+        <div class="coming-card"><div class="coming-num">48A · Field Manual · No. 05</div><div class="coming-title">The International Kitchen</div><p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--muted);font-style:italic;line-height:1.7">Working abroad — sourcing, language barriers, cultural intelligence, remote operations.</p><div class="coming-badge">In Progress</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Money Manual -->
+  <section class="money-section">
+    <div class="container">
+      <div class="money-inner reveal">
+        <div>
+          <span class="money-badge">Coming Soon</span>
+          <h2 class="money-h">The Private Chef's<br>Money Manual</h2>
+          <p class="money-desc">The financial guide the industry never provided. Tax, feast-or-famine income management, and the salary negotiation conversation that most private chefs never had.</p>
+          <div class="btn-secondary" onclick="scrollToEmail()" style="display:inline-flex">Notify me when it launches →</div>
+        </div>
+        <div>
+          <div class="money-pillar"><div class="money-pillar-num">01</div><div><div class="money-pillar-title">Feast or Famine</div><div class="money-pillar-desc">Managing irregular income across peak seasons and quiet periods. Building financial stability through volatility.</div></div></div>
+          <div class="money-pillar"><div class="money-pillar-num">02</div><div><div class="money-pillar-title">Tax Compliance</div><div class="money-pillar-desc">Provisional tax, deductibles, when to engage an accountant. For freelance and permanent private chefs.</div></div></div>
+          <div class="money-pillar"><div class="money-pillar-num">03</div><div><div class="money-pillar-title">Contract Negotiation</div><div class="money-pillar-desc">The yearly increase clause, scope creep protection, benefits in kind. What seven years without negotiating costs in real terms.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-inner">
+        <div class="reveal">
+          <span class="eyebrow">About 48A</span>
+          <div class="rule"></div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);font-weight:300;font-style:italic;color:var(--dark);line-height:1.1;margin-bottom:32px">Written from<br>inside the room.</h2>
+          <p class="about-body">48A does not come from an agency, a recruiter, or a hospitality consultant. It comes from someone who has worked inside a private household at the highest level — managed the kitchen, managed the house, and learned everything the hard way.</p>
+          <p class="about-body">The gap in private household education is not lack of culinary skill. It is the absence of operational intelligence — how households actually function, what principals actually expect, and what it costs to do this work properly.</p>
+          <p class="about-body">48A is the brief that should have existed before your first position. It exists now.</p>
+          <div class="about-credentials">
+            <div class="about-credential"><div class="about-credential-num">10+</div><div class="about-credential-text">Years in private household service at UHNW level</div></div>
+            <div class="about-credential"><div class="about-credential-num">SC</div><div class="about-credential-text">Sole-charge operator — kitchen and household management combined</div></div>
+            <div class="about-credential"><div class="about-credential-num">48h</div><div class="about-credential-text">The advance notice standard that defines this industry</div></div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <div class="about-portrait">
+            <div class="about-portrait-inner">"There is no induction day in private service. You are handed keys to a property worth more than most people earn in a lifetime and expected to perform at the highest level from day one.<br><br>That gap is not acceptable. 48A exists to close it."</div>
+            <div class="about-portrait-sig">Anna Rens · Editor, 48A</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <span class="eyebrow">From the field</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;font-style:italic;color:var(--dark)">What readers say</h2>
+        </div>
+      </div>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card"><div class="testimonial-rule"></div><p class="testimonial-quote">"I wish this had existed when I took my first private position. I spent six months figuring out what this manual covers in seven chapters."</p><div class="testimonial-attr"><span class="testimonial-name">Private Chef · Cape Town</span><span>Manual No.1</span></div></div>
+        <div class="testimonial-card"><div class="testimonial-rule"></div><p class="testimonial-quote">"The agency markup chapter alone is worth the price. I had no idea what the client was actually paying. I do now."</p><div class="testimonial-attr"><span class="testimonial-name">Freelance Private Chef · London</span><span>Manual No.1</span></div></div>
+        <div class="testimonial-card"><div class="testimonial-rule"></div><p class="testimonial-quote">"Finally something written by someone who understands sole charge. The principal relationship chapter is exactly what nobody talks about openly."</p><div class="testimonial-attr"><span class="testimonial-name">Sole Charge Chef · Dubai</span><span>Manual No.4</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-inner">
+        <div class="reveal">
+          <span class="eyebrow">Questions</span>
+          <div class="rule"></div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;font-style:italic;color:var(--dark);line-height:1.2">Before you ask.</h2>
+          <p style="font-size:11px;letter-spacing:.08em;color:var(--muted);line-height:1.9;margin-top:20px">Common questions about the manuals, who they are for, and how they work.</p>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Who are these manuals written for?<span class="faq-toggle">+</span></div><div class="faq-a"><p class="faq-a-inner">Private kitchen professionals at all stages — chefs transitioning from commercial kitchens, experienced freelance chefs, and permanent household chefs managing sole-charge positions. The manuals assume professional kitchen competency and focus entirely on the private household context that culinary training never covers.</p></div></div>
+          <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">What format do I receive?<span class="faq-toggle">+</span></div><div class="faq-a"><p class="faq-a-inner">A PDF delivered immediately upon purchase. No account required, no platform to log into. You download it once and keep it. Works on any device.</p></div></div>
+          <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Is this relevant outside of a specific country?<span class="faq-toggle">+</span></div><div class="faq-a"><p class="faq-a-inner">Yes. The manuals address the professional dynamics, operational structures, and career realities of private household service — consistent across international markets. The intelligence is transferable.</p></div></div>
+          <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Will there be more manuals in the series?<span class="faq-toggle">+</span></div><div class="faq-a"><p class="faq-a-inner">Yes. Series 01 covers five manuals total. No.2, No.3, and No.5 are in production. Join the list to be notified at launch.</p></div></div>
+          <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Who writes 48A?<span class="faq-toggle">+</span></div><div class="faq-a"><p class="faq-a-inner">Anna Rens is a pen name used by a working private household professional with over a decade of sole-charge experience at UHNW level. The editorial perspective is entirely from inside the household — not from a recruiter, consultant, or agency.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email -->
+  <section class="email-section" id="email-anchor">
+    <div class="container">
+      <div class="email-inner reveal">
+        <span class="email-eyebrow">The 48A List</span>
+        <h2 class="email-h">Join the list.<br>Stay ahead.</h2>
+        <p class="email-sub">New manuals, free tools, and field intelligence — sent when it is ready, not on a schedule.</p>
+        <div class="email-form">
+          <input class="email-input" type="email" placeholder="Your email address" id="email-main">
+          <button class="email-btn" onclick="handleEmailSubmit('email-main','success-main')">Join →</button>
+        </div>
+        <div class="success-msg" id="success-main">You're on the list. Welcome to 48A.</div>
+        <div class="email-note">No spam. Unsubscribe anytime.</div>
+        <div class="email-promises">
+          <span class="email-promise">New manual alerts</span>
+          <span class="email-promise">Free tools first</span>
+          <span class="email-promise">Founding member pricing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end series page -->
+
+
+<!-- ═══ PAGE: TOOLS ═══ -->
+<div class="page" id="page-tools" style="padding-top:100px">
+  <section class="tools-page">
+    <div class="container">
+      <div class="tools-hero reveal">
+        <span class="eyebrow">Free Tools</span>
+        <h1 class="tools-h1">The numbers<br>you should know.</h1>
+        <p class="tools-sub">Professional calculators for private kitchen professionals. Rate, invoice, and agency markup — free, always.</p>
+      </div>
+
+      <div class="tool-card reveal">
+        <div class="tool-header">
+          <div><div class="tool-badge">Rate Calculator</div><h2 class="tool-h">What should you charge?</h2></div>
+          <p class="tool-desc">Enter your target annual income and working pattern to calculate your floor day rate — the minimum you should accept for any engagement.</p>
+        </div>
+        <div class="calc-grid">
+          <div class="calc-field"><label class="calc-label">Target Annual Income</label><input class="calc-input" type="number" id="annual-income" placeholder="e.g. 80000" oninput="calcRate()"></div>
+          <div class="calc-field"><label class="calc-label">Currency</label><select class="calc-select" id="currency" onchange="calcRate()"><option value="$">USD $</option><option value="£">GBP £</option><option value="€">EUR €</option><option value="R">ZAR R</option><option value="AED ">AED</option></select></div>
+          <div class="calc-field"><label class="calc-label">Working Days per Week</label><input class="calc-input" type="number" id="days-week" placeholder="5" value="5" min="1" max="7" oninput="calcRate()"></div>
+          <div class="calc-field"><label class="calc-label">Working Weeks per Year</label><input class="calc-input" type="number" id="weeks-year" placeholder="48" value="48" min="1" max="52" oninput="calcRate()"></div>
+        </div>
+        <div class="calc-result" id="rate-result">
+          <div class="calc-result-label">Your Floor Day Rate</div>
+          <div class="calc-result-value" id="rate-value">—</div>
+          <div class="calc-result-sub" id="rate-sub"></div>
+          <div class="calc-result-note" id="rate-note"></div>
+        </div>
+      </div>
+
+      <div class="invoice-card reveal">
+        <div class="tool-header">
+          <div><div class="tool-badge" style="background:rgba(106,116,98,.1);color:var(--sage)">Invoice Generator</div><h2 class="tool-h">Generate a clean invoice.</h2></div>
+          <p class="tool-desc">Private chef invoices must separate service fees from grocery cost. This tool generates a correctly structured invoice you can download and send.</p>
+        </div>
+        <div class="invoice-grid">
+          <div class="calc-field"><label class="calc-label">Client Name</label><input class="calc-input" type="text" id="inv-client" placeholder="Principal / Client" oninput="calcInvoice()"></div>
+          <div class="calc-field"><label class="calc-label">Invoice Date</label><input class="calc-input" type="date" id="inv-date" oninput="calcInvoice()"></div>
+          <div class="calc-field"><label class="calc-label">Currency</label><select class="calc-select" id="inv-currency" onchange="calcInvoice()"><option value="$">USD $</option><option value="£">GBP £</option><option value="€">EUR €</option><option value="R">ZAR R</option></select></div>
+        </div>
+        <div class="invoice-items">
+          <div class="invoice-item-row"><div class="calc-field"><label class="calc-label">Description</label><input class="calc-input" type="text" id="inv-desc1" placeholder="Service fee" oninput="calcInvoice()"></div><div class="calc-field"><label class="calc-label">Amount</label><input class="calc-input" type="number" id="inv-amt1" placeholder="0.00" oninput="calcInvoice()"></div></div>
+          <div class="invoice-item-row"><div class="calc-field"><input class="calc-input" type="text" id="inv-desc2" placeholder="Grocery cost" oninput="calcInvoice()"></div><div class="calc-field"><input class="calc-input" type="number" id="inv-amt2" placeholder="0.00" oninput="calcInvoice()"></div></div>
+          <div class="invoice-item-row"><div class="calc-field"><input class="calc-input" type="text" id="inv-desc3" placeholder="Additional item (optional)" oninput="calcInvoice()"></div><div class="calc-field"><input class="calc-input" type="number" id="inv-amt3" placeholder="0.00" oninput="calcInvoice()"></div></div>
+        </div>
+        <div class="invoice-total-row"><span class="invoice-total-label">Total</span><span class="invoice-total-val" id="inv-total">—</span></div>
+        <div style="margin-top:24px"><button class="calc-btn" onclick="generateInvoice()">Generate Invoice →</button></div>
+      </div>
+
+      <div class="agency-card reveal">
+        <div class="tool-header">
+          <div><div class="tool-badge" style="background:rgba(184,137,108,.1);color:var(--rust)">Agency Markup Calculator</div><h2 class="tool-h">What the agency earns on your rate.</h2></div>
+          <p class="tool-desc">Enter your day rate to see what the agency is likely billing the client — and what the markup costs you over a full year.</p>
+        </div>
+        <div class="calc-grid">
+          <div class="calc-field"><label class="calc-label">Your Day Rate</label><input class="calc-input" type="number" id="agency-rate" placeholder="e.g. 500" oninput="calcMarkup()"></div>
+          <div class="calc-field"><label class="calc-label">Currency</label><select class="calc-select" id="agency-currency" onchange="calcMarkup()"><option value="$">USD $</option><option value="£">GBP £</option><option value="€">EUR €</option><option value="R">ZAR R</option></select></div>
+        </div>
+        <div class="agency-result-grid" id="markup-result" style="display:none">
+          <div class="agency-result-cell"><div class="agency-result-label">You Receive</div><div class="agency-result-val" id="markup-you">—</div></div>
+          <div class="agency-result-cell"><div class="agency-result-label">Client Pays (est. 50% markup)</div><div class="agency-result-val highlight" id="markup-client">—</div></div>
+          <div class="agency-result-cell"><div class="agency-result-label">Agency Margin</div><div class="agency-result-val" id="markup-margin">—</div></div>
+        </div>
+        <p id="markup-note" style="display:none;font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:var(--muted);line-height:1.7;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)">Conservative estimate. Markups of 75–100% are not uncommon at the upper end of the market. Manual No.1 covers how to negotiate directly and what to ask for in writing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="email-section" id="email-anchor-tools">
+    <div class="container">
+      <div class="email-inner reveal">
+        <span class="email-eyebrow">More tools coming</span>
+        <h2 class="email-h">Group Pricing Tool.<br>Contract Checklist.<br>Coming soon.</h2>
+        <p class="email-sub">Join the list to be notified when new tools launch — always free for list members first.</p>
+        <div class="email-form"><input class="email-input" type="email" placeholder="Your email address" id="email-tools"><button class="email-btn" onclick="handleEmailSubmit('email-tools','success-tools')">Join →</button></div>
+        <div class="success-msg" id="success-tools">You're on the list. Welcome to 48A.</div>
+        <div class="email-note">No spam. Unsubscribe anytime.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══ PAGE: THE APP ═══ -->
+<div class="page" id="page-app" style="padding-top:100px">
+  <section class="app-page">
+    <div class="container">
+      <div class="app-hero reveal">
+        <div>
+          <div class="app-badge"><div class="app-badge-dot"></div>In Development</div>
+          <h1 class="app-h">Private kitchen<br>intelligence.<br>In your pocket.</h1>
+          <p class="app-sub">Menus, inventory, guest profiles, service timelines, and dietary tracking — all in one system built specifically for the private household chef.</p>
+          <div class="waitlist-form"><input class="waitlist-input" type="email" placeholder="Join the waitlist" id="email-app"><button class="waitlist-btn" onclick="handleEmailSubmit('email-app','success-app')">Join Waitlist →</button></div>
+          <div class="success-msg" id="success-app" style="color:var(--sage)">You're on the waitlist. We'll be in touch.</div>
+          <div class="waitlist-note" style="margin-top:10px">Founding member pricing · 40% off at launch</div>
+        </div>
+        <div>
+          <div class="phone-mockup">
+            <div class="phone-status"><span class="phone-time">09:14</span><div class="phone-brand"><span class="phone-brand-num">48</span><span class="phone-brand-A">A</span></div><div class="phone-signal"><span></span><span></span><span></span><span></span></div></div>
+            <div class="phone-header"><div class="phone-greeting">Good morning.</div><div class="phone-date">Thursday · Today's overview</div></div>
+            <div class="phone-content">
+              <div class="phone-section-label">Service Today</div>
+              <div class="phone-item active"><div class="phone-item-time">07:00</div><div class="phone-item-info"><span>Breakfast · Family of 4</span><small>Main House</small></div></div>
+              <div class="phone-item"><div class="phone-item-time">11:00</div><div class="phone-item-info"><span>Provisioning · Market</span><small>14 items</small></div></div>
+              <div class="phone-item"><div class="phone-item-time">13:00</div><div class="phone-item-info"><span>Lunch · Pool House</span><small>6 Guests</small></div></div>
+              <div class="phone-item"><div class="phone-item-time">20:00</div><div class="phone-item-info"><span>Dinner · Formal</span><small>10 Guests · Tasting menu</small></div></div>
+              <div class="phone-section-label" style="margin-top:4px">This Week</div>
+              <div class="phone-item"><div class="phone-item-time">Fri</div><div class="phone-item-info"><span>Flowers · Arrange by 15:00</span><small>Principal request</small></div></div>
+            </div>
+            <div class="phone-nav"><div class="phone-nav-icon active"><div class="phone-nav-dot"></div></div><div class="phone-nav-icon"><div class="phone-nav-dot"></div></div><div class="phone-nav-icon"><div class="phone-nav-dot"></div></div><div class="phone-nav-icon"><div class="phone-nav-dot"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="app-features reveal">
+        <div class="app-feature"><div class="app-feature-icon"><span class="app-feature-icon-inner"></span></div><div class="app-feature-title">Menu Planning</div><p class="app-feature-desc">Build and save menus by season, occasion, and principal preference. Track dietary requirements across every household member and regular guest.</p></div>        <div class="app-feature"><div class="app-feature-icon"><span class="app-feature-icon-inner"></span></div><div class="app-feature-title">Guest Profiles</div><p class="app-feature-desc">Maintain detailed dietary, preference, and allergy records for every principal, family member, and regular guest. Never ask twice.</p></div>
+        <div class="app-feature"><div class="app-feature-icon"><span class="app-feature-icon-inner"></span></div><div class="app-feature-title">Service Timelines</div><p class="app-feature-desc">Plan service from provisioning to plating. Build reusable timelines for recurring service patterns and adapt on the day.</p></div>
+        <div class="app-feature"><div class="app-feature-icon"><span class="app-feature-icon-inner"></span></div><div class="app-feature-title">Inventory Tracking</div><p class="app-feature-desc">Track pantry and cellar across multiple properties. Know what you have and what you need before you leave for the market.</p></div>
+      </div>
+      <!-- App Pricing -->
+      <div class="reveal" style="margin-top:80px;padding-top:80px;border-top:1px solid var(--border)">
+        <div style="text-align:center;margin-bottom:52px">
+          <span class="eyebrow">Pricing</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;font-style:italic;color:var(--dark)">Simple. Transparent.</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)">
+          <div style="background:var(--parchment-deep);padding:44px;text-align:center">
+            <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:20px">Solo Chef</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--dark);line-height:1">$29<span style="font-size:16px;color:var(--muted)">/mo</span></div>
+            <div style="font-size:9px;letter-spacing:.1em;color:var(--muted);margin:16px 0 28px">One household · All features</div>
+            <div onclick="scrollToEmail()" class="btn-primary" style="justify-content:center">Join Waitlist →</div>
+          </div>
+          <div style="background:var(--dark);padding:44px;text-align:center;position:relative">
+            <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--brass);color:var(--dark);font-size:7px;letter-spacing:.2em;text-transform:uppercase;padding:4px 14px">Most Common</div>
+            <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,168,76,.7);margin-bottom:20px">Multi-Property</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--parchment);line-height:1">$79<span style="font-size:16px;color:rgba(239,231,220,.4)">/mo</span></div>
+            <div style="font-size:9px;letter-spacing:.1em;color:rgba(239,231,220,.3);margin:16px 0 28px">Up to 5 properties · All features</div>
+            <div onclick="scrollToEmail()" style="display:flex;justify-content:center;align-items:center;gap:8px;background:var(--brass);color:var(--dark);font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:12px 22px;cursor:pointer;font-weight:500">Join Waitlist →</div>
+          </div>
+          <div style="background:var(--parchment-deep);padding:44px;text-align:center">
+            <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:20px">Estate</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--dark);line-height:1">$149<span style="font-size:16px;color:var(--muted)">/mo</span></div>
+            <div style="font-size:9px;letter-spacing:.1em;color:var(--muted);margin:16px 0 28px">Unlimited · Team accounts</div>
+            <div onclick="scrollToEmail()" class="btn-primary" style="justify-content:center">Join Waitlist →</div>
+          </div>
+        </div>
+        <p style="text-align:center;font-size:9px;letter-spacing:.1em;color:var(--muted);margin-top:20px">Founding member pricing: 40% off for the first year · Waitlist only</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══ PAGE: JOURNAL ═══ -->
+<div class="page" id="page-journal" style="padding-top:100px">
+  <section class="journal-page">
+    <div class="container">
+      <div class="tools-hero reveal">
+        <span class="eyebrow">Field Notes</span>
+        <h1 class="tools-h1">From inside<br>the household.</h1>
+        <p class="tools-sub">Observations, intelligence, and operational thinking — written by someone still inside private service.</p>
+      </div>
+      <div class="journal-grid reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:64px">
+        <div class="journal-card" style="background:var(--parchment-deep);padding:40px;border-bottom:2px solid var(--brass);cursor:pointer;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 40px rgba(28,27,26,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:16px">Private Kitchen · 4 min read</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;font-weight:300;color:var(--dark);line-height:1.3;margin-bottom:12px">What agencies don't tell you about day rate markups</h3>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px">The structure behind the number, what the client actually pays, and why knowing this changes your negotiating position permanently.</p>
+          <div style="font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px;transition:gap .2s">Read Note →</div>
+        </div>
+        <div class="journal-card" style="background:var(--parchment-deep);padding:40px;border-bottom:2px solid var(--sage);cursor:pointer;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 40px rgba(28,27,26,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:16px">Sole Charge · 6 min read</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;font-weight:300;color:var(--dark);line-height:1.3;margin-bottom:12px">The principal relationship — what no one says out loud</h3>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px">Access, discretion, and where the professional line actually sits. The dynamic that makes or breaks a long-term position.</p>
+          <div style="font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px">Read Note →</div>
+        </div>
+        <div class="journal-card" style="background:var(--parchment-deep);padding:40px;border-bottom:2px solid var(--rust);cursor:pointer;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 40px rgba(28,27,26,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:16px">Career · 5 min read</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;font-weight:300;color:var(--dark);line-height:1.3;margin-bottom:12px">The transition from commercial kitchen — what actually changes</h3>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px">Not the cooking. The structure, the hierarchy, the absence of a brigade, and the particular loneliness of the private kitchen.</p>
+          <div style="font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px">Read Note →</div>
+        </div>
+      </div>
+      <!-- Field Notes Email -->
+      <div class="field-notes reveal" style="background:var(--parchment-mid);padding:56px;border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+        <div>
+          <span class="eyebrow">The 48A List</span>
+          <h2 class="field-notes-h">New notes,<br>when they're ready.</h2>
+          <p class="field-notes-sub">No publishing schedule. No SEO filler. Field notes arrive when there's something worth saying.</p>
+        </div>
+        <div>
+          <div class="field-notes-form">
+            <input class="field-notes-input" type="email" placeholder="Your email address" id="email-journal">
+            <button class="field-notes-btn" onclick="handleEmailSubmit('email-journal','success-journal')">Join →</button>
+          </div>
+          <div class="success-msg" id="success-journal">You're on the list. Welcome to 48A.</div>
+          <div style="font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:12px">No spam. Unsubscribe anytime.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══ GLOBAL FOOTER ═══ -->
+<footer style="background:var(--parchment);padding:60px 0 0;border-top:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px">
+      <div>
+        <div style="display:flex;align-items:baseline;margin-bottom:12px">
+          <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--dark);letter-spacing:-.02em">48</span><span style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--brass);margin-left:1px">A</span>
+        </div>
+        <p style="font-size:11px;color:var(--muted);line-height:1.8;max-width:200px;margin-bottom:20px">Field manuals for the private household professional.</p>
+        <div style="display:flex;gap:10px">
+          <a href="https://instagram.com/48a.studio" target="_blank" rel="noopener" style="width:28px;height:28px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:8px;color:var(--muted);transition:all .2s;text-decoration:none" onmouseover="this.style.borderColor='var(--dark)';this.style.color='var(--dark)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">IG</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-size:7px;letter-spacing:.25em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;display:block">Manuals</span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="https://chefsystemsstudio.lemonsqueezy.com/checkout/buy/59106a15-71f6-416b-a86c-b44acc791c51" target="_blank" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer;text-decoration:none" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">No.1 · The First Kitchen</a>
+          <a href="https://chefsystemsstudio.lemonsqueezy.com/checkout/buy/7148dc7d-35c3-41b4-989c-a7f26346372f" target="_blank" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer;text-decoration:none" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">No.4 · The Sole Charge Kitchen</a>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:rgba(28,27,26,.25)">No.2 · Coming</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:rgba(28,27,26,.25)">No.3 · Coming</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:rgba(28,27,26,.25)">No.5 · Coming</span>
+        </div>
+      </div>
+      <div>
+        <span style="font-size:7px;letter-spacing:.25em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;display:block">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <span onclick="showPage('tools')" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">Free Tools</span>
+          <span onclick="showPage('app')" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">The App</span>
+          <span onclick="showPage('journal')" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">Journal</span>
+          <span onclick="scrollToEmail()" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">Join the List</span>
+        </div>
+      </div>
+      <div>
+        <span style="font-size:7px;letter-spacing:.25em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;display:block">Contact</span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="mailto:hello@48a.studio" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;text-decoration:none" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">hello@48a.studio</a>
+          <a href="https://instagram.com/48a.studio" target="_blank" rel="noopener" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;text-decoration:none" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">@48a.studio</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--border);padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <span style="font-size:8px;letter-spacing:.12em;color:rgba(28,27,26,.25)">© 2026 48A · hello@48a.studio · For the private household.</span>
+      <span style="font-size:8px;letter-spacing:.12em;color:rgba(28,27,26,.2)">Written from inside the room.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// ── NAV & PAGES ──
+function showPage(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.mobile-tab').forEach(t=>t.classList.remove('active'));
+  const pg=document.getElementById('page-'+page);
+  if(pg){pg.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+  document.querySelectorAll('[data-page="'+page+'"]').forEach(t=>t.classList.add('active'));
+}
+function toggleMobileMenu(){
+  const m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+function scrollToEmail(){
+  const el=document.getElementById('email-anchor');
+  if(el){el.scrollIntoView({behavior:'smooth'});showPage('series');}
+}
+
+// ── SCROLL EFFECTS ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>10);
+  document.querySelectorAll('.reveal').forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-80)el.classList.add('in');
+  });
+});
+// Initial reveal check
+setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-40)el.classList.add('in');});},100);
+
+// ── FAQ ──
+function toggleFaq(item){
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+
+// ── EMAIL SUBMIT ──
+function handleEmailSubmit(inputId,successId){
+  const input=document.getElementById(inputId);
+  const email=input?input.value.trim():'';
+  if(!email||!email.includes('@'))return;
+  const success=document.getElementById(successId);
+  if(success){success.classList.add('visible');success.style.display='block';}
+  if(input)input.value='';
+  // ConvertKit form submission
+  fetch('https://app.convertkit.com/forms/e58cc7f5c6/subscriptions',{
+    method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:'email_address='+encodeURIComponent(email)
+  }).catch(()=>{});
+}
+
+// ── RATE CALCULATOR ──
+function calcRate(){
+  const income=parseFloat(document.getElementById('annual-income').value)||0;
+  const daysWk=parseFloat(document.getElementById('days-week').value)||5;
+  const weeksYr=parseFloat(document.getElementById('weeks-year').value)||48;
+  const currency=document.getElementById('currency').value;
+  const result=document.getElementById('rate-result');
+  if(!income){result.classList.remove('visible');return;}
+  const totalDays=daysWk*weeksYr;
+  const dayRate=income/totalDays;
+  document.getElementById('rate-value').textContent=currency+Math.ceil(dayRate).toLocaleString();
+  document.getElementById('rate-sub').textContent=totalDays+' working days per year at '+currency+Math.ceil(dayRate)+'/day = '+currency+income.toLocaleString()+'/yr';
+  document.getElementById('rate-note').textContent='This is your floor — the minimum you should accept. At 50% agency markup, the client pays '+currency+Math.ceil(dayRate*1.5).toLocaleString()+'/day. Manual No.1 covers how to negotiate above your floor and what to ask for in writing.';
+  result.classList.add('visible');
+}
+
+// ── INVOICE CALCULATOR ──
+function calcInvoice(){
+  const amts=[1,2,3].map(i=>parseFloat(document.getElementById('inv-amt'+i).value)||0);
+  const total=amts.reduce((a,b)=>a+b,0);
+  const currency=document.getElementById('inv-currency').value;
+  document.getElementById('inv-total').textContent=total>0?currency+total.toFixed(2):'—';
+}
+function generateInvoice(){
+  const client=document.getElementById('inv-client').value||'Client';
+  const date=document.getElementById('inv-date').value||new Date().toISOString().split('T')[0];
+  const currency=document.getElementById('inv-currency').value;
+  const rows=[[document.getElementById('inv-desc1').value,document.getElementById('inv-amt1').value],[document.getElementById('inv-desc2').value,document.getElementById('inv-amt2').value],[document.getElementById('inv-desc3').value,document.getElementById('inv-amt3').value]].filter(r=>r[0]||r[1]);
+  const total=rows.reduce((s,r)=>s+(parseFloat(r[1])||0),0);
+  const w=window.open('','_blank');
+  w.document.write('<html><head><title>Invoice</title><style>body{font-family:Georgia,serif;padding:60px;color:#1c1b1a;max-width:700px;margin:0 auto}h1{font-size:32px;font-style:italic;font-weight:300;margin-bottom:4px}table{width:100%;border-collapse:collapse;margin:32px 0}th{text-align:left;font-size:10px;letter-spacing:.15em;text-transform:uppercase;border-bottom:2px solid #1c1b1a;padding:8px 0}td{padding:12px 0;border-bottom:1px solid #e0d7ca;font-size:15px}.total{font-size:18px;font-weight:600}.label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8a8070}</style></head><body>');
+  w.document.write('<h1>Invoice</h1><p class="label">48A Field Manuals · hello@48a.studio</p><br><p class="label">Billed to: '+client+'<br>Date: '+date+'</p>');
+  w.document.write('<table><tr><th>Description</th><th>Amount</th></tr>');
+  rows.forEach(r=>w.document.write('<tr><td>'+(r[0]||'—')+'</td><td>'+currency+(parseFloat(r[1])||0).toFixed(2)+'</td></tr>'));
+  w.document.write('<tr><td class="total">Total</td><td class="total">'+currency+total.toFixed(2)+'</td></tr></table>');
+  w.document.write('<p style="font-size:11px;color:#8a8070;margin-top:40px">Generated by 48A Invoice Tool · 48a.studio</p></body></html>');
+  w.document.close();
+}
+
+// ── AGENCY MARKUP ──
+function calcMarkup(){
+  const rate=parseFloat(document.getElementById('agency-rate').value)||0;
+  const currency=document.getElementById('agency-currency').value;
+  const result=document.getElementById('markup-result');
+  const note=document.getElementById('markup-note');
+  if(!rate){result.style.display='none';note.style.display='none';return;}
+  document.getElementById('markup-you').textContent=currency+rate.toFixed(2);
+  document.getElementById('markup-client').textContent=currency+(rate*1.5).toFixed(2);
+  document.getElementById('markup-margin').textContent=currency+(rate*0.5).toFixed(2)+' (33%)';
+  result.style.display='grid';
+  note.style.display='block';
+}
+</script>
+</body>
+</html>
