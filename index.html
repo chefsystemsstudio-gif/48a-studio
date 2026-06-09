@@ -398,8 +398,21 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     <div class="nav-tab" data-page="tools" onclick="showPage('tools')">Tools</div>
     <div class="nav-tab" data-page="app" onclick="showPage('app')">The App</div>
     <div class="nav-tab" data-page="journal" onclick="showPage('journal')">Journal</div>
+    <div class="nav-tab" data-page="contract" onclick="showPage('contract')">Free Contract</div>
   </div>
   <div class="nav-right">
+    <!-- Language Switcher -->
+    <div style="position:relative;display:flex;align-items:center;gap:4px;" id="lang-switcher">
+      <select onchange="switchLang(this.value)" style="appearance:none;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'DM Mono',monospace;font-size:7px;letter-spacing:.15em;padding:5px 22px 5px 8px;cursor:pointer;text-transform:uppercase;" id="lang-select">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+        <option value="es">ES</option>
+        <option value="ar">AR</option>
+        <option value="zh">ZH</option>
+      </select>
+      <span style="position:absolute;right:6px;pointer-events:none;font-size:8px;color:var(--muted)">▾</span>
+    </div>
     <a href="https://instagram.com/48a.studio" target="_blank" rel="noopener" style="font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .2s;padding:0 4px;" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">@48a.studio</a>
     <div class="nav-join" onclick="scrollToEmail()">Join the List</div>
     <button class="nav-mobile-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -413,6 +426,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   <div class="mobile-tab" data-page="tools" onclick="showPage('tools');toggleMobileMenu()">Tools</div>
   <div class="mobile-tab" data-page="app" onclick="showPage('app');toggleMobileMenu()">The App</div>
   <div class="mobile-tab" data-page="journal" onclick="showPage('journal');toggleMobileMenu()">Journal</div>
+  <div class="mobile-tab" data-page="contract" onclick="showPage('contract');toggleMobileMenu()">Free Contract</div>
   <div style="padding-top:16px"><div class="btn-primary" onclick="scrollToEmail();toggleMobileMenu()" style="justify-content:center">Join the List</div></div>
 </div>
 
@@ -425,8 +439,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <div class="hero-inner">
         <div>
           <div class="hero-kicker reveal">Series 01 · Private Kitchen</div>
-          <h1 class="hero-h1 reveal reveal-delay-1">For the private<br>household.</h1>
-          <p class="hero-sub reveal reveal-delay-2">The brief nobody gave you. Field manuals for the private kitchen professional — written from inside the household, not outside it.</p>
+          <h1 id="hero-heading" class="hero-h1 reveal reveal-delay-1">For the private<br>household.</h1>
+          <p id="hero-sub" class="hero-sub reveal reveal-delay-2">The brief nobody gave you. Field manuals for the private kitchen professional — written from inside the household, not outside it.</p>
           <div class="hero-actions reveal reveal-delay-3">
             <div class="btn-primary" onclick="document.getElementById('manuals-anchor').scrollIntoView({behavior:'smooth'})">Explore Manuals →</div>
             <div class="btn-secondary" onclick="scrollToEmail()">Join the List</div>
@@ -505,7 +519,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
           </div>
           <div class="manual-footer">
             <div class="manual-price">$29<small>One-time purchase · Instant download</small></div>
-            <a href="https://chefsystemsstudio.lemonsqueezy.com/checkout/buy/59106a15-71f6-416b-a86c-b44acc791c51" class="btn-buy" target="_blank">Buy Now →</a>
+            <a href="https://chefsystem.gumroad.com/l/ilmhlu" class="btn-buy" target="_blank">Buy Now →</a>
           </div>
         </div>
         <div class="manual-card reveal reveal-delay-1">
@@ -524,7 +538,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
           </div>
           <div class="manual-footer">
             <div class="manual-price">$29<small>One-time purchase · Instant download</small></div>
-            <a href="https://chefsystemsstudio.lemonsqueezy.com/checkout/buy/7148dc7d-35c3-41b4-989c-a7f26346372f" class="btn-buy" target="_blank">Buy Now →</a>
+            <a href="https://chefsystem.gumroad.com/l/qjzrq" class="btn-buy" target="_blank">Buy Now →</a>
           </div>
         </div>
       </div>
@@ -887,8 +901,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <div>
         <span style="font-size:7px;letter-spacing:.25em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;display:block">Manuals</span>
         <div style="display:flex;flex-direction:column;gap:10px">
-          <a href="https://chefsystemsstudio.lemonsqueezy.com/checkout/buy/59106a15-71f6-416b-a86c-b44acc791c51" target="_blank" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer;text-decoration:none" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">No.1 · The First Kitchen</a>
-          <a href="https://chefsystemsstudio.lemonsqueezy.com/checkout/buy/7148dc7d-35c3-41b4-989c-a7f26346372f" target="_blank" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer;text-decoration:none" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">No.4 · The Sole Charge Kitchen</a>
+          <a href="https://chefsystem.gumroad.com/l/ilmhlu" target="_blank" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer;text-decoration:none" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">No.1 · The First Kitchen</a>
+          <a href="https://chefsystem.gumroad.com/l/qjzrq" target="_blank" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer;text-decoration:none" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">No.4 · The Sole Charge Kitchen</a>
           <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:rgba(28,27,26,.25)">No.2 · Coming</span>
           <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:rgba(28,27,26,.25)">No.3 · Coming</span>
           <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:rgba(28,27,26,.25)">No.5 · Coming</span>
@@ -897,7 +911,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <div>
         <span style="font-size:7px;letter-spacing:.25em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;display:block">Platform</span>
         <div style="display:flex;flex-direction:column;gap:10px">
-          <span onclick="showPage('tools')" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">Free Tools</span>
+          <span onclick="showPage('contract')" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">Free Contract</span>
+          <span onclick="showPage('legal-terms')" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">Terms & Conditions</span>
+          <span onclick="showPage('legal-refund')" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">Refund Policy</span>
+          <span onclick="showPage('legal-shipping')" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">Delivery Policy</span>
           <span onclick="showPage('app')" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">The App</span>
           <span onclick="showPage('journal')" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">Journal</span>
           <span onclick="scrollToEmail()" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);transition:color .15s;cursor:pointer" onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--muted)'">Join the List</span>
@@ -1021,6 +1038,234 @@ function calcMarkup(){
   document.getElementById('markup-margin').textContent=currency+(rate*0.5).toFixed(2)+' (33%)';
   result.style.display='grid';
   note.style.display='block';
+}
+</script>
+<!-- ═══ PAGE: FREE CONTRACT ═══ -->
+<div class="page" id="page-contract" style="padding-top:100px">
+  <section style="padding:80px 0 120px">
+    <div class="container">
+      <div class="reveal" style="max-width:760px;margin:0 auto 64px">
+        <span class="eyebrow">Free Resource · 48A</span>
+        <h1 style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;font-style:italic;color:var(--dark);line-height:1.1;margin-bottom:20px">The Freelance<br>Kitchen Contract</h1>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--muted);line-height:1.8;margin-bottom:32px">A working contract template for private kitchen professionals taking freelance or agency work. Fill it in, save it as PDF, send it before you start. Every clause is here for a reason.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div onclick="generateContract()" style="display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:var(--parchment);font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:13px 24px;cursor:pointer;transition:background .2s" onmouseover="this.style.background='var(--dark-mid)'" onmouseout="this.style.background='var(--dark)'">Generate PDF Contract →</div>
+          <div onclick="scrollToEmail()" style="display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--muted);font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:13px 24px;cursor:pointer;transition:all .2s" onmouseover="this.style.borderColor='var(--dark)';this.style.color='var(--dark)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Get Manual No.1 →</div>
+        </div>
+      </div>
+
+      <!-- Contract Form -->
+      <div class="reveal" style="background:var(--parchment-deep);border:1px solid var(--border);padding:56px;max-width:900px;margin:0 auto">
+        <div style="font-size:7px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage);margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid var(--border)">Freelance Kitchen Services Agreement · 48A Contract Builder</div>
+
+        <!-- Section 1: Parties -->
+        <div style="margin-bottom:40px">
+          <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:20px;height:1px;background:var(--brass);display:inline-block"></span>01 · Parties</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Your Full Name / Trading Name</label><input id="c-chef-name" type="text" placeholder="Anna Rens / Chef Systems Studio" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Client / Agency Name</label><input id="c-client-name" type="text" placeholder="The Household / Agency Name" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Your Email</label><input id="c-chef-email" type="email" placeholder="hello@youremail.com" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Client Contact Name & Email</label><input id="c-client-email" type="text" placeholder="Contact name / email" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+          </div>
+        </div>
+
+        <!-- Section 2: Engagement -->
+        <div style="margin-bottom:40px">
+          <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:20px;height:1px;background:var(--brass);display:inline-block"></span>02 · Engagement Details</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px">
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Start Date</label><input id="c-start" type="date" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">End Date</label><input id="c-end" type="date" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Daily Hours (e.g. 07:00–19:00)</label><input id="c-hours" type="text" placeholder="07:00 – 19:00" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+          </div>
+          <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Scope of Services (be specific)</label><textarea id="c-scope" rows="3" placeholder="Daily breakfast, lunch and dinner service for household of 4. Grocery procurement, kitchen management, menu planning. Does NOT include event catering, staff meals, or external service." style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none;resize:vertical" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></textarea></div>
+        </div>
+
+        <!-- Section 3: Payment -->
+        <div style="margin-bottom:40px">
+          <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:20px;height:1px;background:var(--brass);display:inline-block"></span>03 · Payment Terms</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px">
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Day Rate / Total Fee</label><input id="c-rate" type="text" placeholder="$850 per day" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Payment Schedule</label><select id="c-payment-schedule" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none;appearance:none"><option>50% upfront, 50% on completion</option><option>Weekly in arrears</option><option>100% upfront</option><option>On completion</option><option>Bi-weekly</option></select></div>
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Payment Method</label><input id="c-payment-method" type="text" placeholder="Bank transfer / EFT" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Food Cost Policy</label><select id="c-food-cost" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none;appearance:none"><option>Client provides food budget separately — not included in day rate</option><option>Food costs included in day rate up to agreed limit</option><option>Chef to invoice food costs separately with receipts</option><option>Client pays all food costs directly</option></select></div>
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Invoice Terms (days to pay)</label><input id="c-invoice-terms" type="text" placeholder="7 days from invoice date" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+          </div>
+        </div>
+
+        <!-- Section 4: Cancellation -->
+        <div style="margin-bottom:40px">
+          <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:20px;height:1px;background:var(--brass);display:inline-block"></span>04 · Cancellation Terms</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Cancellation by Client</label><select id="c-cancel-client" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none;appearance:none"><option>48h+ notice: no charge. Under 48h: 50% of remaining fees due</option><option>72h+ notice: no charge. Under 72h: full fee due</option><option>7 days+ notice: deposit forfeited only. Under 7 days: full fee due</option><option>24h+ notice: no charge. Under 24h: full day rate due</option></select></div>
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Cancellation by Chef</label><select id="c-cancel-chef" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none;appearance:none"><option>48h+ notice: deposit refunded in full</option><option>Chef will provide equivalent replacement at own cost</option><option>Deposit refunded, no further liability</option></select></div>
+          </div>
+        </div>
+
+        <!-- Section 5: Confidentiality & Liability -->
+        <div style="margin-bottom:40px">
+          <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:20px;height:1px;background:var(--brass);display:inline-block"></span>05 · Confidentiality & Liability</div>
+          <div style="background:var(--parchment);border:1px solid var(--border);padding:20px 24px;margin-bottom:16px">
+            <div style="font-size:9px;letter-spacing:.08em;color:var(--muted);line-height:1.9">
+              <strong style="color:var(--dark);font-size:8px;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:8px">Confidentiality (Standard Clause)</strong>
+              The Chef agrees to maintain strict confidentiality regarding the identity, personal details, lifestyle, dietary requirements, household staff, property details, and any other personal or operational information relating to the Client and their household. This obligation continues indefinitely after the engagement ends. The Chef will not disclose, publish, or reference any aspect of the engagement on social media, in professional profiles, or in any public forum without prior written consent from the Client.
+            </div>
+          </div>
+          <div style="background:var(--parchment);border:1px solid var(--border);padding:20px 24px">
+            <div style="font-size:9px;letter-spacing:.08em;color:var(--muted);line-height:1.9">
+              <strong style="color:var(--dark);font-size:8px;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:8px">Liability Disclaimer (Standard Clause)</strong>
+              The Chef carries personal professional liability and operates as an independent contractor, not an employee. The Client is responsible for ensuring the kitchen environment, equipment, and facilities meet applicable health and safety standards. The Chef shall not be held liable for allergic reactions where dietary requirements were not disclosed in writing prior to service. The Chef's total liability under this agreement shall not exceed the total fees paid for the engagement.
+            </div>
+          </div>
+          <div style="margin-top:16px"><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Additional Confidentiality / Liability Notes (optional)</label><textarea id="c-conf-notes" rows="2" placeholder="Any additional confidentiality requirements specific to this household..." style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none;resize:vertical" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></textarea></div>
+        </div>
+
+        <!-- Section 6: Agency specific -->
+        <div style="margin-bottom:40px">
+          <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:20px;height:1px;background:var(--brass);display:inline-block"></span>06 · Agency Arrangements (if applicable)</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Agency Name (if booked via agency)</label><input id="c-agency" type="text" placeholder="Leave blank if direct booking" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Agency Fee / Commission (if known)</label><input id="c-agency-fee" type="text" placeholder="e.g. 20% of day rate" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+          </div>
+          <div style="margin-top:16px;background:var(--parchment);border:1px solid var(--border);padding:20px 24px">
+            <div style="font-size:9px;letter-spacing:.08em;color:var(--muted);line-height:1.9">
+              <strong style="color:var(--dark);font-size:8px;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:8px">Direct Engagement Clause</strong>
+              Where this engagement is sourced through a staffing agency, the Client agrees not to directly re-engage the Chef for a period of 12 months following the conclusion of this engagement without the knowledge and written consent of the agency, or without the Chef's agreement to a direct engagement fee equivalent to the agency's standard placement fee.
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 7: Signatures -->
+        <div style="margin-bottom:32px">
+          <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:20px;height:1px;background:var(--brass);display:inline-block"></span>07 · Agreement & Signature</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Governing Law / Jurisdiction</label><input id="c-jurisdiction" type="text" placeholder="Republic of South Africa" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+            <div><label style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px">Contract Date</label><input id="c-date" type="date" style="width:100%;background:var(--parchment);border:1px solid var(--border);padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dark);outline:none" onfocus="this.style.borderColor='var(--brass)'" onblur="this.style.borderColor='var(--border)'"></div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;padding-top:24px;border-top:1px solid var(--border)">
+          <div onclick="generateContract()" style="display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:var(--parchment);font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:13px 28px;cursor:pointer;transition:background .2s" onmouseover="this.style.background='var(--dark-mid)'" onmouseout="this.style.background='var(--dark)'">Generate Contract PDF →</div>
+          <div onclick="clearContract()" style="display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--muted);font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:13px 24px;cursor:pointer">Clear Form</div>
+        </div>
+        <p style="font-size:8px;letter-spacing:.08em;color:var(--muted);margin-top:12px;line-height:1.7">This template is provided as a professional starting point. 48A recommends having any contract reviewed by a qualified legal professional before use, particularly for high-value or extended engagements.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══ PAGE: TERMS & CONDITIONS ═══ -->
+<div class="page" id="page-legal-terms" style="padding-top:100px">
+  <section style="padding:80px 0 120px"><div class="container"><div style="max-width:760px;margin:0 auto">
+    <span class="eyebrow">Legal · 48A</span>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;font-style:italic;color:var(--dark);margin-bottom:40px">Terms & Conditions</h1>
+    <div style="font-size:9px;letter-spacing:.1em;color:var(--muted);margin-bottom:48px">Last updated: June 2026 · 48A · hello@48a.studio</div>
+    <div style="font-size:13px;color:var(--text);line-height:2;display:flex;flex-direction:column;gap:32px">
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">1. About 48A</h3><p>48A is a digital publishing brand operated under the pen name Anna Rens. We publish field manuals and professional resources for private household and kitchen professionals. Our primary website is 48a.studio.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">2. Products</h3><p>48A sells digital products including PDF field manuals, downloadable templates, and access to digital tools. All products are delivered electronically. No physical goods are dispatched. By purchasing you confirm you are acquiring a personal, non-transferable licence to use the product for your own professional development.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">3. Intellectual Property</h3><p>All content on 48a.studio and within 48A products — including text, structure, design, tools, and methodology — is the intellectual property of 48A. You may not reproduce, resell, redistribute, or publish any part of our products without written permission. Personal use and reference in a private professional context is permitted.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">4. Payments</h3><p>Payments are processed securely through Lemon Squeezy or Paystack. 48A does not store payment card details. All prices are displayed in USD unless otherwise stated. You are responsible for any local taxes applicable in your jurisdiction.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">5. Disclaimer</h3><p>48A products are written from professional experience and are intended as operational reference material. They do not constitute legal, financial, or employment advice. 48A accepts no liability for decisions made on the basis of information contained in our products. Always seek qualified professional advice for legal and financial matters.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">6. Governing Law</h3><p>These terms are governed by the laws of the Republic of South Africa. Any disputes shall be resolved under South African jurisdiction.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">7. Contact</h3><p>For any questions regarding these terms, contact us at hello@48a.studio.</p></div>
+    </div>
+  </div></div></section>
+</div>
+
+
+<!-- ═══ PAGE: REFUND POLICY ═══ -->
+<div class="page" id="page-legal-refund" style="padding-top:100px">
+  <section style="padding:80px 0 120px"><div class="container"><div style="max-width:760px;margin:0 auto">
+    <span class="eyebrow">Legal · 48A</span>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;font-style:italic;color:var(--dark);margin-bottom:40px">Refund Policy</h1>
+    <div style="font-size:9px;letter-spacing:.1em;color:var(--muted);margin-bottom:48px">Last updated: June 2026 · 48A · hello@48a.studio</div>
+    <div style="font-size:13px;color:var(--text);line-height:2;display:flex;flex-direction:column;gap:32px">
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">Our Policy</h3><p>Because 48A products are digital downloads delivered immediately upon purchase, we operate a considered refund policy. We stand behind the quality of our work and want every customer to feel confident purchasing.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">Eligible for Refund</h3><p>You are eligible for a full refund within 7 days of purchase if: the product was not as described on the sales page; the file was corrupted or failed to download correctly; or you purchased the same product twice by error. Contact hello@48a.studio with your order number and reason.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">Not Eligible for Refund</h3><p>We are unable to process refunds where the product has been downloaded and the refund request is based solely on a change of mind. Digital products cannot be returned once downloaded.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">How to Request</h3><p>Email hello@48a.studio with subject line "Refund Request — [Order Number]". We aim to respond within 48 hours. Approved refunds are processed within 5–7 business days via the original payment method.</p></div>
+    </div>
+  </div></div></section>
+</div>
+
+
+<!-- ═══ PAGE: DELIVERY POLICY ═══ -->
+<div class="page" id="page-legal-shipping" style="padding-top:100px">
+  <section style="padding:80px 0 120px"><div class="container"><div style="max-width:760px;margin:0 auto">
+    <span class="eyebrow">Legal · 48A</span>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;font-style:italic;color:var(--dark);margin-bottom:40px">Delivery Policy</h1>
+    <div style="font-size:9px;letter-spacing:.1em;color:var(--muted);margin-bottom:48px">Last updated: June 2026 · 48A · hello@48a.studio</div>
+    <div style="font-size:13px;color:var(--text);line-height:2;display:flex;flex-direction:column;gap:32px">
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">Digital Delivery</h3><p>All 48A products are delivered digitally. There is no physical shipping. Upon successful payment, you will receive an email from our payment processor (Lemon Squeezy or Paystack) containing your secure download link.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">Delivery Timing</h3><p>Digital products are available for download immediately upon payment confirmation. Download links are valid for 5 downloads or 30 days, whichever comes first. If your link expires, contact hello@48a.studio for a replacement.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">Download Issues</h3><p>If you experience any difficulty downloading your product, check your spam folder first. If the issue persists, email hello@48a.studio with your order number and we will send the file directly within 24 hours.</p></div>
+      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:12px">Format</h3><p>All field manuals are delivered as high-resolution PDF files, optimised for both screen reading and printing. Files range from 2–8MB. Compatible with all PDF readers including Adobe Acrobat, Preview (Mac), and any modern browser.</p></div>
+    </div>
+  </div></div></section>
+</div>
+
+
+<script>
+// ── LANGUAGE SWITCHER ──
+const translations = {
+  en: { hero: "For the private household.", sub: "The brief you should have received before you started.", cta: "View the Series →", join: "Join the List" },
+  fr: { hero: "Pour le personnel domestique privé.", sub: "Le briefing que vous auriez dû recevoir avant de commencer.", cta: "Voir la Série →", join: "Rejoindre la Liste" },
+  de: { hero: "Für den privaten Haushalt.", sub: "Die Einweisung, die Sie vor dem Start hätten erhalten sollen.", cta: "Zur Serie →", join: "Liste beitreten" },
+  es: { hero: "Para el personal doméstico privado.", sub: "El briefing que debería haber recibido antes de empezar.", cta: "Ver la Serie →", join: "Unirse a la Lista" },
+  ar: { hero: "للمنزل الخاص.", sub: "الإحاطة التي كان يجب أن تتلقاها قبل البدء.", cta: "عرض السلسلة →", join: "انضم للقائمة" },
+  zh: { hero: "为私人家庭服务。", sub: "您在开始之前应该收到的简报。", cta: "查看系列 →", join: "加入名单" }
+};
+function switchLang(lang) {
+  const t = translations[lang];
+  if (!t) return;
+  const heroEl = document.getElementById('hero-heading');
+  const subEl = document.getElementById('hero-sub');
+  const ctaEl = document.getElementById('hero-cta');
+  if (heroEl) heroEl.textContent = t.hero;
+  if (subEl) subEl.textContent = t.sub;
+  if (ctaEl) ctaEl.textContent = t.cta;
+  document.querySelectorAll('.nav-join').forEach(el => el.textContent = t.join);
+  if (lang === 'ar') document.documentElement.setAttribute('dir', 'rtl');
+  else document.documentElement.removeAttribute('dir');
+}
+
+// ── CONTRACT GENERATOR ──
+function generateContract() {
+  const g = id => (document.getElementById(id)||{}).value || '_______________';
+  const w = window.open('', '_blank');
+  const css = `body{font-family:Georgia,serif;padding:72px;color:#1c1b1a;max-width:800px;margin:0 auto;font-size:13px;line-height:1.9}
+    h1{font-size:36px;font-style:italic;font-weight:300;margin-bottom:6px;color:#1c1b1a}
+    h2{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#6a7462;margin:36px 0 12px;padding-bottom:8px;border-bottom:1px solid #e0d7ca}
+    .rule{width:40px;height:2px;background:#c9a84c;margin:8px 0 24px}
+    p{margin-bottom:14px;color:#3d332c}
+    .clause{background:#f5f0e8;padding:18px 24px;margin:12px 0;border-left:3px solid #c9a84c;font-size:12px;line-height:1.8}
+    .sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px}
+    .sig-block{border-top:1px solid #1c1b1a;padding-top:12px}
+    .label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8a8070}
+    .footer{margin-top:64px;padding-top:16px;border-top:1px solid #e0d7ca;font-size:10px;color:#8a8070;text-align:center}
+    @media print{body{padding:48px}}`;
+  w.document.write(`<!DOCTYPE html><html><head><title>48A Freelance Contract</title><style>${css}</style></head><body>`);
+  w.document.write(`<div class="label">48A · Freelance Kitchen Services Agreement</div><h1>Service Agreement</h1><div class="rule"></div><p class="label">Generated: ${new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'})} · 48a.studio</p>`);
+  w.document.write(`<h2>01 · Parties</h2><p><strong>Service Provider:</strong> ${g('c-chef-name')} (${g('c-chef-email')})<br><strong>Client:</strong> ${g('c-client-name')} (${g('c-client-email')})</p>`);
+  w.document.write(`<h2>02 · Engagement Details</h2><p><strong>Start Date:</strong> ${g('c-start')}<br><strong>End Date:</strong> ${g('c-end')}<br><strong>Working Hours:</strong> ${g('c-hours')}</p><p><strong>Scope of Services:</strong><br>${g('c-scope')}</p>`);
+  w.document.write(`<h2>03 · Payment Terms</h2><p><strong>Fee:</strong> ${g('c-rate')}<br><strong>Payment Schedule:</strong> ${g('c-payment-schedule')}<br><strong>Method:</strong> ${g('c-payment-method')}<br><strong>Food Costs:</strong> ${g('c-food-cost')}<br><strong>Invoice Terms:</strong> ${g('c-invoice-terms')}</p>`);
+  w.document.write(`<h2>04 · Cancellation Terms</h2><p><strong>Client Cancellation:</strong> ${g('c-cancel-client')}<br><strong>Chef Cancellation:</strong> ${g('c-cancel-chef')}</p>`);
+  w.document.write(`<h2>05 · Confidentiality</h2><div class="clause">The Chef agrees to maintain strict confidentiality regarding the identity, personal details, lifestyle, dietary requirements, household staff, property details, and any other personal or operational information relating to the Client and their household. This obligation continues indefinitely after the engagement ends. The Chef will not disclose, publish, or reference any aspect of the engagement on social media, in professional profiles, or in any public forum without prior written consent from the Client.${g('c-conf-notes') !== '_______________' ? '<br><br><em>Additional notes: '+g('c-conf-notes')+'</em>' : ''}</div>`);
+  w.document.write(`<h2>06 · Liability Disclaimer</h2><div class="clause">The Chef carries personal professional liability and operates as an independent contractor, not an employee. The Client is responsible for ensuring the kitchen environment, equipment, and facilities meet applicable health and safety standards. The Chef shall not be held liable for allergic reactions where dietary requirements were not disclosed in writing prior to service. The Chef's total liability under this agreement shall not exceed the total fees paid for the engagement.</div>`);
+  if (g('c-agency') !== '_______________') {
+    w.document.write(`<h2>07 · Agency Arrangement</h2><p><strong>Agency:</strong> ${g('c-agency')}<br><strong>Commission:</strong> ${g('c-agency-fee')}</p><div class="clause">Where this engagement is sourced through a staffing agency, the Client agrees not to directly re-engage the Chef for a period of 12 months following the conclusion of this engagement without the knowledge and written consent of the agency, or without the Chef's agreement to a direct engagement fee equivalent to the agency's standard placement fee.</div>`);
+  }
+  w.document.write(`<h2>08 · Agreement</h2><p>This agreement constitutes the entire understanding between the parties. Both parties confirm they have read, understood, and agree to the terms set out above. This agreement is governed by the laws of <strong>${g('c-jurisdiction')}</strong>.</p>`);
+  w.document.write(`<div class="sig-grid"><div class="sig-block"><div style="height:48px"></div><div class="label">Service Provider Signature</div><p style="margin-top:8px">${g('c-chef-name')}</p><p class="label">Date: _________________</p></div><div class="sig-block"><div style="height:48px"></div><div class="label">Client Signature</div><p style="margin-top:8px">${g('c-client-name')}</p><p class="label">Date: _________________</p></div></div>`);
+  w.document.write(`<div class="footer">Generated by 48A Contract Builder · 48a.studio · This template is a professional starting point and does not constitute legal advice.</div>`);
+  w.document.write('</body></html>');
+  w.document.close();
+  setTimeout(() => w.print(), 800);
+}
+function clearContract() {
+  ['c-chef-name','c-client-name','c-chef-email','c-client-email','c-start','c-end','c-hours','c-scope','c-rate','c-payment-method','c-invoice-terms','c-conf-notes','c-agency','c-agency-fee','c-jurisdiction','c-date'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
 }
 </script>
 </body>
