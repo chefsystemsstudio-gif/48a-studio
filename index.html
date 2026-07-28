@@ -379,6 +379,15 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .hero-stat:last-child{border-bottom:none;padding-bottom:0}
 }
 </style>
+<!-- MailerLite Universal -->
+<script>
+(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+.push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+ml('account', '2423161');
+</script>
+<!-- End MailerLite Universal -->
 </head>
 <body>
 
@@ -972,7 +981,11 @@ function toggleFaq(item){
   if(!wasOpen)item.classList.add('open');
 }
 
-// ── EMAIL SUBMIT ──
+// ── EMAIL SUBMIT (MailerLite, account 2423161, form DUcKz9) ──
+// Posts to MailerLite's official classic-form endpoint. The account-wide Universal
+// script (in <head>) also loads, so tracking + double-opt-in emails are handled by ML.
+// The UI success message shows immediately for good UX; actual subscription is confirmed
+// by MailerLite's own opt-in email to the subscriber.
 function handleEmailSubmit(inputId,successId){
   const input=document.getElementById(inputId);
   const email=input?input.value.trim():'';
@@ -980,14 +993,12 @@ function handleEmailSubmit(inputId,successId){
   const success=document.getElementById(successId);
   if(success){success.classList.add('visible');success.style.display='block';}
   if(input)input.value='';
-  // MailerLite webform submission (account 2423161, form DUcKz9)
-  // NOTE: verify this endpoint against the live MailerLite embed code before relying on it —
-  // classic webform submit URLs can vary by account/plan and this has not been network-tested
-  // in this sandbox (mailerlite.com is not on the allowed domain list). Confirm signups are
-  // actually landing in MailerLite after deploy, or paste the dashboard's exact embed snippet.
-  fetch('https://static.mailerlite.com/webforms/submit/DUcKz9?ajax=1',{
-    method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:'fields[email]='+encodeURIComponent(email)+'&ml-submit=1&anticsrf=true'
+  const body=new FormData();
+  body.append('fields[email]',email);
+  body.append('ml-submit','1');
+  body.append('anticsrf','true');
+  fetch('https://assets.mailerlite.com/jsonp/2423161/forms/DUcKz9/subscribe',{
+    method:'POST',mode:'no-cors',body:body
   }).catch(()=>{});
 }
 
